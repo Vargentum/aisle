@@ -1,0 +1,59 @@
+/*------------------------------------*\
+   Pseudo-elements
+\*------------------------------------*/
+@mixin pb(){
+  content: '';
+  display: block;
+  position: absolute;
+}
+
+@mixin pi($align: auto){
+  content: '';
+  display: inline-block;
+  vertical-align: $align;
+}
+
+
+/*------------------------------------*\
+  Quick image insert
+\*------------------------------------*/
+@mixin img($imgName, $imgPos: 50% 50%, $imgRepeat: no-repeat){
+  background-image: url('../img/#{$imgName}');
+  background-repeat: $imgRepeat;
+  background-position: $imgPos;
+}
+
+
+/*------------------------------------*\
+  Colors for states(hover, focus, etc)
+\*------------------------------------*/
+@mixin c1($lmc-1){
+  &,&:hover,&:focus,&:active,&:visited{color: $lmc-1;}
+}
+
+@mixin c2($lmc-1, $lmc-2){
+  &,&:active,&:visited{color: $lmc-1;}
+  &:hover,&:focus{color: $lmc-2;}
+}
+
+
+@mixin placeholder($color){
+  ::-webkit-input-placeholder {color: $color}
+  :-moz-placeholder           {color: $color}
+  ::-moz-placeholder          {color: $color}
+  :-ms-input-placeholder      {color: $color}
+}
+
+
+@mixin hLine($alignItems: baseline){
+  &>*{
+    display: inline-block;
+    vertical-align: $alignItems;
+  }
+}
+
+@mixin text-hide{
+  font: 0/0 serif;
+  text-shadow: none;
+  color: transparent;
+}
