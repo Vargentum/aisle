@@ -24,47 +24,104 @@
   @include hLine(middle);
   position: relative;
   margin-top: 8px;
-  z-index: 1;
+  z-index: 2;
   ul{
     margin: 0;
     padding: 0;
+    list-style-type: none;
   }
-  li{
+  &>ul>li{
     display: inline-block;
     padding: 0 15px;
     border-right: 1px solid #d5d5d5;
+    position: relative;
+    &:hover{
+      .this__dropdown{display: block;}
+    }
   }
   select{
     width: auto;
     margin: 0;
   }
-}
-@each $i in connections, messages, notifications{
-  .events__unit--#{$i}{
-    display: block;
-    position: relative;
-    bottom: 9px;
-    left:   12px;
-    text-align: center;
-    font-weight: bold;
-    @include c1(#fff);
-    font-size: rem-calc(12);
-    width: 20px;
-    height: 20px;
-    line-height: 20px;
-    background-color: $secondary-color;
-    border-radius: 50%;
-    &:before{
-      @include pb();
-      z-index: -1;
-      width: 16px;
-      height:16px;
-      top:   9px;
-      right: 12px;
-      @include img('events-#{$i}.png')
+  @each $i in connections, messages, notifications{
+    .this__label--#{$i}{
+      display: block;
+      position: relative;
+      bottom: 9px;
+      left:   12px;
+      text-align: center;
+      font-weight: bold;
+      @include c1(#fff);
+      font-size: rem-calc(12);
+      width: 20px;
+      height: 20px;
+      line-height: 20px;
+      background-color: $secondary-color;
+      border-radius: 50%;
+      &:before{
+        @include pb();
+        z-index: -1;
+        width: 16px;
+        height:16px;
+        top:   9px;
+        right: 12px;
+        @include img('events-#{$i}.png')
+      }
     }
   }
+  .this__dropdown{
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 15px;
+    background-color: #fff;
+    border: 1px solid #bdbebd;
+    //arrow
+    &:before{
+      @include pb;
+      @include img('dropdown-arrow.png');
+      width: 12px;
+      height: 7px;
+      bottom: 100%;
+      right: 0;
+    }
+  }
+  .this__dropdown__notificationsList{
+    max-height: 170px;
+    overflow-y: auto;
+  }
+  .this__dropdown__notification{
+    @include clearfix;
+    @include hLine(middle);
+    width: 350px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: left;
+    padding: 11px;
+    font-size: 12px;
+    border-bottom: 1px solid #bdbebd;
+    cursor: pointer;
+    &:hover{background-color: #dedede;}
+    img{
+      width:32px;
+      height: 32px;
+      margin-right: 10px;
+    }
+    .button{
+      padding: rem-calc(6) rem-calc(12)
+    }
+  }
+  .this__dropdown__footer{
+    padding: 10px;
+    background-color: #f7f7f7;
+    text-align: center;
+    color: #2d2d2d;
+    font-size: 12px;
+    cursor: pointer;
+  }
 }
+
 
 .top-bar{
   ul.left{

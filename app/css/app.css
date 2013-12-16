@@ -7662,7 +7662,7 @@ th.hide-for-touch {
   text-align: right;
   position: relative;
   margin-top: 8px;
-  z-index: 1;
+  z-index: 2;
 }
 
 .events > * {
@@ -7673,12 +7673,18 @@ th.hide-for-touch {
 .events ul {
   margin: 0;
   padding: 0;
+  list-style-type: none;
 }
 
-.events li {
+.events > ul > li {
   display: inline-block;
   padding: 0 15px;
   border-right: 1px solid #d5d5d5;
+  position: relative;
+}
+
+.events > ul > li:hover .this__dropdown {
+  display: block;
 }
 
 .events select {
@@ -7686,7 +7692,7 @@ th.hide-for-touch {
   margin: 0;
 }
 
-.events__unit--connections {
+.events .this__label--connections {
   display: block;
   position: relative;
   bottom: 9px;
@@ -7701,15 +7707,15 @@ th.hide-for-touch {
   border-radius: 50%;
 }
 
-.events__unit--connections,
-.events__unit--connections:hover,
-.events__unit--connections:focus,
-.events__unit--connections:active,
-.events__unit--connections:visited {
+.events .this__label--connections,
+.events .this__label--connections:hover,
+.events .this__label--connections:focus,
+.events .this__label--connections:active,
+.events .this__label--connections:visited {
   color: white;
 }
 
-.events__unit--connections:before {
+.events .this__label--connections:before {
   content: '';
   display: block;
   position: absolute;
@@ -7723,7 +7729,7 @@ th.hide-for-touch {
   background-position: 50% 50%;
 }
 
-.events__unit--messages {
+.events .this__label--messages {
   display: block;
   position: relative;
   bottom: 9px;
@@ -7738,15 +7744,15 @@ th.hide-for-touch {
   border-radius: 50%;
 }
 
-.events__unit--messages,
-.events__unit--messages:hover,
-.events__unit--messages:focus,
-.events__unit--messages:active,
-.events__unit--messages:visited {
+.events .this__label--messages,
+.events .this__label--messages:hover,
+.events .this__label--messages:focus,
+.events .this__label--messages:active,
+.events .this__label--messages:visited {
   color: white;
 }
 
-.events__unit--messages:before {
+.events .this__label--messages:before {
   content: '';
   display: block;
   position: absolute;
@@ -7760,7 +7766,7 @@ th.hide-for-touch {
   background-position: 50% 50%;
 }
 
-.events__unit--notifications {
+.events .this__label--notifications {
   display: block;
   position: relative;
   bottom: 9px;
@@ -7775,15 +7781,15 @@ th.hide-for-touch {
   border-radius: 50%;
 }
 
-.events__unit--notifications,
-.events__unit--notifications:hover,
-.events__unit--notifications:focus,
-.events__unit--notifications:active,
-.events__unit--notifications:visited {
+.events .this__label--notifications,
+.events .this__label--notifications:hover,
+.events .this__label--notifications:focus,
+.events .this__label--notifications:active,
+.events .this__label--notifications:visited {
   color: white;
 }
 
-.events__unit--notifications:before {
+.events .this__label--notifications:before {
   content: '';
   display: block;
   position: absolute;
@@ -7795,6 +7801,84 @@ th.hide-for-touch {
   background-image: url('../img/events-notifications.png');
   background-repeat: no-repeat;
   background-position: 50% 50%;
+}
+
+.events .this__dropdown {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 15px;
+  background-color: white;
+  border: 1px solid #bdbebd;
+}
+
+.events .this__dropdown:before {
+  content: '';
+  display: block;
+  position: absolute;
+  background-image: url('../img/dropdown-arrow.png');
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  width: 12px;
+  height: 7px;
+  bottom: 100%;
+  right: 0;
+}
+
+.events .this__dropdown__notificationsList {
+  max-height: 170px;
+  overflow-y: auto;
+}
+
+.events .this__dropdown__notification {
+  *zoom: 1;
+  width: 350px;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  text-align: left;
+  padding: 11px;
+  font-size: 12px;
+  border-bottom: 1px solid #bdbebd;
+  cursor: pointer;
+}
+
+.events .this__dropdown__notification:before,
+.events .this__dropdown__notification:after {
+  content: " ";
+  display: table;
+}
+
+.events .this__dropdown__notification:after {
+  clear: both;
+}
+
+.events .this__dropdown__notification > * {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.events .this__dropdown__notification:hover {
+  background-color: #dedede;
+}
+
+.events .this__dropdown__notification img {
+  width: 32px;
+  height: 32px;
+  margin-right: 10px;
+}
+
+.events .this__dropdown__notification .button {
+  padding: 0.42857rem 0.85714rem;
+}
+
+.events .this__dropdown__footer {
+  padding: 10px;
+  background-color: #f7f7f7;
+  text-align: center;
+  color: #2d2d2d;
+  font-size: 12px;
+  cursor: pointer;
 }
 
 .top-bar ul.left {
