@@ -23,14 +23,80 @@
     <!--user events notifications-->
     <div class="events">
       <ul>
-        <li><a href="#" class="events__unit--connections">1</a></li>
-        <li><a href="#" class="events__unit--messages">4</a></li>
-        <li><a href="#" class="events__unit--notifications">19</a></li>
+        <li>
+          <a href="#" class="this__label--connections">1</a>
+          <div class="this__dropdown">
+            <ul class="this__dropdown__notificationsList">
+              <li class="this__dropdown__notification">
+                <div class="left">
+                  <img class="this__dropdown__notification__img" src="http://fakeimg.pl/32x32/?text=Hello">
+                  <span class="this__dropdown__notification__text"><b>Able</b> just viewed our profile.</span>
+                </div>
+                <div class="right  l-hLine">
+                  <button class="button  radius  tiny  secondary">Accept</button>
+                  <button class="button  radius  tiny  primary">Decline</button>
+                </div>
+              </li>
+            </ul>
+            <footer class="this__dropdown__footer">See all Invites</footer>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="this__label--messages">4</a>
+          <div class="this__dropdown">
+            <ul class="this__dropdown__notificationsList">
+              <li class="this__dropdown__notification">
+                <div class="this__dropdown__notification__img"><img src="http://fakeimg.pl/32x32/?text=Hello"></div>
+                <div class="this__dropdown__notification__text">
+                  <div><b>Able</b></div>
+                  <div>just viewed our profile.</div>
+                </div>
+              </li>
+              <li class="this__dropdown__notification">
+                <div class="this__dropdown__notification__img"><img src="http://fakeimg.pl/32x32/?text=Hello"></div>
+                <div class="this__dropdown__notification__text">
+                  <div><b>Able</b></div>
+                  <div><b>Lorem ipsum</b> dolor sit amet</div>
+                </div>
+              </li>
+            </ul>
+            <footer class="this__dropdown__footer">See all Invites</footer>
+          </div>
+        </li>
+        <li>
+          <a href="#" class="this__label--notifications">19</a>
+          <div class="this__dropdown">
+            <ul class="this__dropdown__notificationsList">
+              <li class="this__dropdown__notification">
+                <div class="this__dropdown__notification__img"><img src="http://fakeimg.pl/32x32/?text=Hello"></div>
+                <span class="this__dropdown__notification__text"><b>Able</b> just viewed our profile.</span>
+              </li>
+              <li class="this__dropdown__notification">
+                <div class="this__dropdown__notification__img"><img src="http://fakeimg.pl/32x32/?text=Hello"></div>
+                <span class="this__dropdown__notification__text"><b>Able</b> just viewed our profile.</span>
+              </li>
+            </ul>
+            <footer class="this__dropdown__footer">See all Invites</footer>
+          </div>
+        </li>
+        <li class="this__userMenu">
+        <!--<li class="this__userMenu  is-active">-->
+          <a href="#" class="this__userMenu__label">UserName</a>
+          <div class="this__dropdown">
+            <ul class="this__dropdown__notificationsList">
+              <li class="this__dropdown__notification">
+                <a href="#">Profile</a>
+              </li>
+              <li class="this__dropdown__notification">
+                <a href="#">Edit</a>
+              </li>
+              <li class="this__dropdown__notification">
+                <a href="#">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </li>
       </ul>
-      <select>
-        <option>Able</option>
-        <option>Disable</option>
-      </select>
     </div>
   </div>
 
@@ -38,23 +104,23 @@
     <!--navigation-->
     <nav class="top-bar" data-topbar>
       <section class="top-bar-section">
-        <!-- Left Nav Section -->
-        <ul class="left">
+        <!--search form-->
+        <ul class="right">
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+          <li class="has-form">
+            <form class="search">
+              <input class="search__field" type="search" placeholder="Search by ID"/>
+            </form>
+          </li>
+        </ul>
+        <!--nav list-->
+        <ul class="left  top-bar-main-list">
           <li><a href="#">Find</a></li>
           <li><a href="#">Bookmarks</a></li>
           <li><a href="#">Connections</a></li>
           <li><a href="#">Notifications</a></li>
           <li><a href="#">Messages</a></li>
           <li><a href="#">Invites</a></li>
-        </ul>
-
-        <!--search form-->
-        <ul class="right">
-          <li class="has-form">
-            <form class="search">
-              <input class="search__field" type="search" placeholder="Search by ID"/>
-            </form>
-          </li>
         </ul>
       </section>
     </nav>
@@ -71,11 +137,11 @@
     <tr class="is-active">
       <td class="this__mainCell">
         <img class="this__userPic" src="http://fakeimg.pl/45x45/?text=45">
-        <b>Joe</b> wants to connect with you.
+        <span><b>Joe</b> wants to connect with you.</span>
       </td>
       <td>
-        <button class="button  rounded  tiny  secondary">Accept</button>
-        <button class="button  rounded  tiny  primary">Decline</button>
+        <button class="button  radius  tiny  secondary">Accept</button>
+        <button class="button  radius  tiny  primary">Decline</button>
       </td>
       <td>
         <time class="this__time" datetime="2013-11-22T12:55">
@@ -87,27 +153,11 @@
     <tr class="is-active">
       <td class="this__mainCell">
         <img class="this__userPic" src="http://fakeimg.pl/45x45/?text=45">
-        <b>Joe</b> wants to connect with you.
+        <span><b>Joe</b> wants to connect with you.</span>
       </td>
       <td>
-        <button class="button  rounded  tiny  secondary">Accept</button>
-        <button class="button  rounded  tiny  primary">Decline</button>
-      </td>
-      <td>
-        <time class="this__time" datetime="2013-11-22T12:55">
-          <span>22<sup>nd</sup> Nov 2013</span>
-          <span>12:55pm</span>
-        </time>
-      </td>
-    </tr>
-    <tr>
-      <td class="this__mainCell">
-        <img class="this__userPic" src="http://fakeimg.pl/45x45/?text=45">
-        <b>Joe</b> wants to connect with you.
-      </td>
-      <td>
-        <button class="button  rounded  tiny  secondary">Accept</button>
-        <button class="button  rounded  tiny  primary">Decline</button>
+        <button class="button  radius  tiny  secondary">Accept</button>
+        <button class="button  radius  tiny  primary">Decline</button>
       </td>
       <td>
         <time class="this__time" datetime="2013-11-22T12:55">
@@ -119,27 +169,11 @@
     <tr>
       <td class="this__mainCell">
         <img class="this__userPic" src="http://fakeimg.pl/45x45/?text=45">
-        <b>Joe</b> wants to connect with you.
+        <span><b>Joe</b> wants to connect with you.</span>
       </td>
       <td>
-        <button class="button  rounded  tiny  secondary">Accept</button>
-        <button class="button  rounded  tiny  primary">Decline</button>
-      </td>
-      <td>
-        <time class="this__time" datetime="2013-11-22T12:55">
-          <span>22<sup>nd</sup> Nov 2013</span>
-          <span>12:55pm</span>
-        </time>
-      </td>
-    </tr>
-    <tr>
-      <td class="this__mainCell">
-        <img class="this__userPic" src="http://fakeimg.pl/45x45/?text=45">
-        <b>Joe</b> wants to connect with you.
-      </td>
-      <td>
-        <button class="button  rounded  tiny  secondary">Accept</button>
-        <button class="button  rounded  tiny  primary">Decline</button>
+        <button class="button  radius  tiny  secondary">Accept</button>
+        <button class="button  radius  tiny  primary">Decline</button>
       </td>
       <td>
         <time class="this__time" datetime="2013-11-22T12:55">
@@ -151,27 +185,11 @@
     <tr>
       <td class="this__mainCell">
         <img class="this__userPic" src="http://fakeimg.pl/45x45/?text=45">
-        <b>Joe</b> wants to connect with you.
+        <span><b>Joe</b> wants to connect with you.</span>
       </td>
       <td>
-        <button class="button  rounded  tiny  secondary">Accept</button>
-        <button class="button  rounded  tiny  primary">Decline</button>
-      </td>
-      <td>
-        <time class="this__time" datetime="2013-11-22T12:55">
-          <span>22<sup>nd</sup> Nov 2013</span>
-          <span>12:55pm</span>
-        </time>
-      </td>
-    </tr>
-    <tr>
-      <td class="this__mainCell">
-        <img class="this__userPic" src="http://fakeimg.pl/45x45/?text=45">
-        <b>Joe</b> wants to connect with you.
-      </td>
-      <td>
-        <button class="button  rounded  tiny  secondary">Accept</button>
-        <button class="button  rounded  tiny  primary">Decline</button>
+        <button class="button  radius  tiny  secondary">Accept</button>
+        <button class="button  radius  tiny  primary">Decline</button>
       </td>
       <td>
         <time class="this__time" datetime="2013-11-22T12:55">
@@ -183,27 +201,11 @@
     <tr>
       <td class="this__mainCell">
         <img class="this__userPic" src="http://fakeimg.pl/45x45/?text=45">
-        <b>Joe</b> wants to connect with you.
+        <span><b>Joe</b> wants to connect with you.</span>
       </td>
       <td>
-        <button class="button  rounded  tiny  secondary">Accept</button>
-        <button class="button  rounded  tiny  primary">Decline</button>
-      </td>
-      <td>
-        <time class="this__time" datetime="2013-11-22T12:55">
-          <span>22<sup>nd</sup> Nov 2013</span>
-          <span>12:55pm</span>
-        </time>
-      </td>
-    </tr>
-    <tr>
-      <td class="this__mainCell">
-        <img class="this__userPic" src="http://fakeimg.pl/45x45/?text=45">
-        <b>Joe</b> wants to connect with you.
-      </td>
-      <td>
-        <button class="button  rounded  tiny  secondary">Accept</button>
-        <button class="button  rounded  tiny  primary">Decline</button>
+        <button class="button  radius  tiny  secondary">Accept</button>
+        <button class="button  radius  tiny  primary">Decline</button>
       </td>
       <td>
         <time class="this__time" datetime="2013-11-22T12:55">
@@ -215,27 +217,11 @@
     <tr>
       <td class="this__mainCell">
         <img class="this__userPic" src="http://fakeimg.pl/45x45/?text=45">
-        <b>Joe</b> wants to connect with you.
+        <span><b>Joe</b> wants to connect with you.</span>
       </td>
       <td>
-        <button class="button  rounded  tiny  secondary">Accept</button>
-        <button class="button  rounded  tiny  primary">Decline</button>
-      </td>
-      <td>
-        <time class="this__time" datetime="2013-11-22T12:55">
-          <span>22<sup>nd</sup> Nov 2013</span>
-          <span>12:55pm</span>
-        </time>
-      </td>
-    </tr>
-    <tr>
-      <td class="this__mainCell">
-        <img class="this__userPic" src="http://fakeimg.pl/45x45/?text=45">
-        <b>Joe</b> wants to connect with you.
-      </td>
-      <td>
-        <button class="button  rounded  tiny  secondary">Accept</button>
-        <button class="button  rounded  tiny  primary">Decline</button>
+        <button class="button  radius  tiny  secondary">Accept</button>
+        <button class="button  radius  tiny  primary">Decline</button>
       </td>
       <td>
         <time class="this__time" datetime="2013-11-22T12:55">
@@ -317,6 +303,8 @@
     
 <script src="bower_components/jquery/jquery.min.js"></script>
 <script src="bower_components/foundation/js/foundation.min.js"></script>
+
+<script src="js/plugins.min.js"></script>
 <script src="js/app.js"></script>
 
 

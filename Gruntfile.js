@@ -43,7 +43,33 @@ module.exports = function (grunt) {
       }
     },
 
-        includes: {
+    concat: {
+      plugins:{
+        files:{
+          '<%= project.app %>/js/plugins.js': '<%= project.src %>/scripts/plugins/{,*/}*.js'
+        }
+      },
+      app:{
+        files:{
+          '<%= project.app %>/js/app.js': '<%= project.src %>/scripts/*.js'
+        }
+      }
+    },
+
+    uglify:{
+      plugins:{
+        files:{
+          '<%= project.app %>/js/plugins.min.js': '<%= project.app %>/js/plugins.js'
+        }
+      },
+      app:{
+        files:{
+          '<%= project.app %>/js/app.min.js': '<%= project.app %>/js/app.js'
+        }
+      }
+    },
+
+    includes: {
       files: {
         cwd: '<%= project.src %>/views',
         src: [ '**.html' ],
@@ -91,6 +117,10 @@ module.exports = function (grunt) {
         files: '<%= project.src %>/styles/**',
         tasks: ['sass','autoprefixer','csso']
       },
+      scripts: {
+        files: '<%= project.src %>/scripts/**',
+        tasks: ['concat','uglify']
+      },
       views: {
         files: '<%= project.views %>',
         tasks: ['includes']
@@ -107,6 +137,8 @@ module.exports = function (grunt) {
   });
 
   grunt.registerTask('default', [
+    'concat',
+    'uglify',
     'sass',
     'autoprefixer',
     'csso',

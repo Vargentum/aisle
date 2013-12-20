@@ -16,10 +16,16 @@
 }
 .logo{
   text-decoration: none;
-  @include grid-column(6);
+  @include grid-column(4);
+  img{display: inline-block;}
+  @include breakpoint(500px){
+    @include grid-column(12);
+    margin-bottom: 20px;
+    text-align: center;
+  }
 }
 .events{
-  @include grid-column(6);
+  @include grid-column(8);
   text-align: right;
   @include hLine(middle);
   position: relative;
@@ -39,10 +45,7 @@
       .this__dropdown{display: block;}
     }
   }
-  select{
-    width: auto;
-    margin: 0;
-  }
+
   @each $i in connections, messages, notifications{
     .this__label--#{$i}{
       display: block;
@@ -103,13 +106,19 @@
     border-bottom: 1px solid #bdbebd;
     cursor: pointer;
     &:hover{background-color: #dedede;}
-    img{
-      width:32px;
-      height: 32px;
-      margin-right: 10px;
-    }
     .button{
       padding: rem-calc(6) rem-calc(12)
+    }
+  }
+  .this__dropdown__notification__img{
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+    img{
+      width: 100%;
+      height: 100%;
+      display: inline-block;
     }
   }
   .this__dropdown__footer{
@@ -120,27 +129,118 @@
     font-size: 12px;
     cursor: pointer;
   }
+
+  .this__userMenu{
+    a{
+      @include c1(#333);
+    }
+    border-right: none;
+    &.is-active:after{
+      @include img('select-arrow-reversed.png');
+    }
+    .this__dropdown__notification{
+      width: 150px;
+      &:last-child{
+        border-bottom: none;
+      }
+    }
+  }
+  .this__userMenu__label{
+    font-size: 14px;
+    &:after{
+      @include pi(baseline);
+      @include img('select-arrow.png');
+      width: 15px;
+      height: 8px;
+      margin-left: 7px;
+    }
+  }
+
+  @include breakpoint(630px){
+    .this__dropdown__notification{
+      width: 200px;
+      white-space: normal;
+    }
+  }
+  @include breakpoint(500px){
+    @include grid-column(12);
+    text-align: center;
+    .this__dropdown{
+      width: 250px;
+      left: 0;
+      right: auto;
+      &:before{
+        left: 10px;
+        right: auto;
+      }
+      .this__dropdown__notification{
+        width: inherit;
+      }
+    }
+    .this__userMenu .this__dropdown{
+      width: 150px;
+      left: auto;
+      right: 15px;
+      &:before{
+        left: auto;
+        right: 0;
+      }
+    }
+  }
 }
 
 
 .top-bar{
-  ul.left{
-    padding-top: 15px;
-    background-color: transparent;
+  @include clearfix;
+  .top-bar-section{
+    @include clearfix;
+    ul{background: none;}
+    .has-form{
+      padding: 0;
+      margin: 0 10px;
+      position: relative;
+    }
   }
-  a{
-    border-left: 1px solid #d5d5d5;
-    height: 16px !important;
-    line-height: 16px !important;
-  }
-  li:first-child a{
-    border-left: none;
+  .toggle-topbar.menu-icon{
+    top: 0;
+    margin-top: 0;
+    z-index: 1;
   }
 }
 
+.top-bar-main-list{
+  text-align: center;
+  li{display: inline-block}
+  a{
+    position: relative;
+    //divider
+    &:before{
+      @include pb;
+      position: absolute;
+      top: 50%;
+      left: 100%;
+      width: 1px;
+      height: 16px;
+      margin-top: -8px;
+      background-color: #d5d5d5;
+    }
+  }
+  li:last-child a:before{
+    display: none;
+  }
+  @include breakpoint(930px){
+    a{padding-right: 15px !important;}
+  }
+  @include breakpoint(700px){
+    text-align: left;
+    li{display: block;}
+  }
+}
+
+
 .search{
+  display: block;
   width: 250px;
-  position: relative;
   //icon
   &:before{
     @include pb();
@@ -150,12 +250,13 @@
     @include img('search-icon.png');
     width: 16px;
     height: 16px;
-    margin-top: -1px;
+    margin-top: -8px;
   }
   .search__field{
     width:100%;
     padding-left: 32px;
     padding-right: 10px;
+    color: #333;
   }
 }
 
@@ -304,18 +405,11 @@ ul.pagination{
     font-size: rem-calc(22);
     margin: 0 0 rem-calc(5);
     padding-left: rem-calc(35);
+    @include breakpoint(910px){
+      padding-left: 0;
+    }
   }
-}
-@for $i from 1 through 3{
-  .boxes__unit--#{$i}{
-    @include grid-column(4);
-    padding: rem-calc(15) rem-calc(20);
-    background-color: #f2f2f2;
-    height: 125px;
-    background-position: 20px 20px;
-    background-repeat: no-repeat;
-    background-image: url('../img/boxes-#{$i}.png');
-  }
+  p{margin-bottom: 0;}
 }
 .boxes__unit--1{
   border-right: 5px solid #fff;
@@ -327,6 +421,26 @@ ul.pagination{
 .boxes__unit--3{
   border-left: 5px solid #fff;
 }
+@for $i from 1 through 3{
+  .boxes__unit--#{$i}{
+    @include grid-column(4);
+    padding: rem-calc(15) rem-calc(20);
+    background-color: #f2f2f2;
+    background-position: 20px 20px;
+    background-repeat: no-repeat;
+    background-image: url('../img/boxes-#{$i}.png');
+    @include breakpoint(910px){
+      padding: rem-calc(50) 0 rem-calc(15);
+      text-align: center;
+      background-position: 50% 20px;
+    }
+    @include breakpoint(700px){
+      @include grid-column(12);
+      border: 5px solid #fff;
+    }
+  }
+}
+
 
 
 .l-footer__bottom{
@@ -339,7 +453,7 @@ ul.pagination{
 .serviceNav{
   @include grid-column(6);
   margin: 0;
-  padding: 2px 0 0;
+  padding: 2px 0 0 10px;
   list-style-type: none;
   @include hLine();
   font-size: 12px;
@@ -411,6 +525,37 @@ ul.pagination{
       &:first-child{border-left: none;}
     }
   }
+  //responsive
+  @include breakpoint(950px){
+    .this__mainCell{
+      width: auto;
+    }
+  }
+  @include breakpoint(710px){
+    td{
+      padding: 5px;
+      text-align: center;
+    }
+    button{
+      padding: 5px;
+      margin-bottom: 5px;
+      &:last-child{margin-bottom: 0;}
+    }
+    .this__userPic{
+      display: inline-block;
+      margin: 0 0 5px;
+    }
+    .this__mainCell{
+      padding: 10px;
+      span{
+        display: block;
+        text-align: center;
+      }
+    }
+  }
+  @include breakpoint(650px){
+    .this__time span{border-left: none;}
+  }
 }
 
 /*------------------------------------*\
@@ -422,7 +567,7 @@ ul.pagination{
   .this__section{
     color: #656565;
     background-color: #f7f7f7;
-    padding: 12px;
+    padding: 12px 8px;
     border-bottom: 1px solid #d5d5d5;
     &:last-child{border-bottom: none;}
     select{
@@ -433,6 +578,10 @@ ul.pagination{
       font-size: 11px;
       border-radius: 2px;
     }
+  }
+  .this__selectWrap{
+    display: flex;
+    justify-content: space-between;
   }
   .this__section__title{
     color: #333;
@@ -533,6 +682,12 @@ ul.pagination{
       background-image: url('../img/select-arrow-reversed.png');
     }
   }
+  @include breakpoint(850px){
+    @include grid-column(4)
+  }
+  @include breakpoint(600px){
+    @include grid-column(5)
+  }
 }
 
 
@@ -542,6 +697,17 @@ ul.pagination{
     @extend .ui-island;
     padding: 10px 0;
     @include clearfix();
+    .customSelect{
+      font-size: 14px;
+      float: right;
+      .caret{
+        transform: scale(1);
+        right:7px;
+      }
+    }
+    .selectedValue{
+      padding: 10px 5px 10px 10px;
+    }
   }
   .this__title{
     float: left;
@@ -558,9 +724,21 @@ ul.pagination{
     background-color: #d5d5d5;
     margin: 0;
   }
+  @include breakpoint(850px){
+    @include grid-column(8)
+  }
+  @include breakpoint(600px){
+    @include grid-column(7)
+  }
 }
 .search-results__list{
   @include block-grid(3);
+  @include breakpoint(850px){
+    @include block-grid(2);
+  }
+  @include breakpoint(600px){
+    @include block-grid(1);
+  }
   margin: 0;
   li{
     padding: 0 rem-calc(5);
@@ -569,7 +747,7 @@ ul.pagination{
 .search-results__unit{
   position: relative;
   @include clearfix;
-  margin: 12px 0;
+  margin: 20px 0 0;
   &:hover{
     background-color: #f7f7f7;
     .this__resize,
@@ -697,16 +875,26 @@ ul.pagination{
     &>*{margin-right: 25px;}
   }
   .this__email{
-    padding-left: 22px;
-    @include img('icon-mail.png', 0 50%);
+    &:before{
+      @include pi(baseline);
+      width: 16px;
+      height: 12px;
+      @include img('icon-mail.png');
+      margin-right: 5px;
+    }
   }
   .this__tel{
-    padding-left: 22px;
-    @include img('icon-tel.png', 0 50%);
+    &:before{
+      @include pi(baseline);
+      margin-bottom: -1px;
+      width: 11px;
+      height: 16px;
+      @include img('icon-tel.png');
+      margin-right: 5px;
+    }
   }
   .this__mainPhoto{
-    float: left;
-    width: 350px;
+    @include grid-column(5);
     img{
       display: block;
       width: 100%;
@@ -714,8 +902,7 @@ ul.pagination{
     }
   }
   .this__about{
-    float: right;
-    width: 560px;
+    @include grid-column(7);
     p{font-size: 13px;}
   }
   .this__otherPhotosList{
@@ -752,12 +939,296 @@ ul.pagination{
       border-bottom: 1px solid #d5d5d5;
     }
   }
-  .this__detailedInfo__lt{
-    float: left;
-    width: 350px;
+  .this__detailedInfo__lt{@include grid-column(5)}
+  .this__detailedInfo__rt{@include grid-column(7)}
+  @include breakpoint(980px){
+    width: 600px;
+    margin-left: -300px;
+    .this__header__right{
+      button:first-child{margin-bottom: 5px;}
+    }
+    .this__title{
+      text-align: center;
+    }
+    .this__header__info{
+      &>*{
+        display: block;
+        margin-bottom: 5px;
+        &:last-child{margin-bottom: 0;}
+      }
+    }
+    .this__mainPhoto,
+    .this__about,
+    .this__detailedInfo__lt,
+    .this__detailedInfo__rt {
+      @include grid-column(12);
+      dt{@include grid-column(4)}
+      dd{@include grid-column(8)}
+    }
   }
-  .this__detailedInfo__rt{
-    float: right;
-    width: 560px;
+  @include breakpoint(600px){
+    width: 400px;
+    margin-left: -200px;
+    .this__header__left{
+      @include grid-column(12);
+      padding-bottom: 10px;
+      border-right: none;
+    }
+    .this__header__right{
+      @include grid-column(12);
+      padding: 5px 0;
+      text-align: center;
+      @include hLine();
+    }
+    .this__header__info{
+      text-align: center;
+    }
+    dt{@include grid-column(6)}
+    dd{@include grid-column(6)}
   }
+  @include breakpoint(400px){
+    width: 300px;
+    margin-left: -150px;
+  }
+}
+
+
+/*------------------------------------*\
+    Custom selectbox
+\*------------------------------------*/
+select{display: none;}
+.customSelect {
+  display: inline-block;
+  position: relative;
+  font-size: 11px;
+  margin: 0;
+}
+.customSelect .selectedValue {
+  padding: 5px 15px 5px 5px;
+  width: inherit;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-bottom: 0;
+  line-height: 1.2;
+  color: #333333;
+  cursor: pointer;
+  background-color: #d5d5d5;
+  border-radius: 2px;
+}
+.customSelect .selectList {
+  z-index: 100;
+  position: absolute;
+  left: -999em;
+  top: -999em;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background-color: #d5d5d5;
+}
+
+.customSelect.select-open .selectList {
+  left: 0 !important;
+  top: auto !important;
+}
+.customSelect .selectList dl {
+  background: #fff;
+}
+.customSelect .selectList dl.defaultScrollbar {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.customSelect dl, .customSelect dd {
+  margin: 0;
+}
+.customSelect dd {
+  zoom: 1;
+  cursor: pointer;
+}
+.customSelect .selected,
+.customSelect .selectList dd.hovered {
+  text-decoration: none;
+  background-color: #333;
+  border-top-color: #666;
+  border-bottom-color: #666;
+  color: #fff;
+}
+.customSelect dt {
+  font-weight: bold;
+  font-style: italic;
+  padding: 2px 10px 2px 6px;
+}
+.customSelect dd {
+  padding: 2px 10px 2px 8px;
+  font-size: inherit;
+  border-top: 1px solid transparent;
+  border-bottom: 1px solid #666;
+  background-color: #d5d5d5;
+}
+.hasJS select.custom {
+  position: absolute;
+  left: -999em;
+}
+.customSelect.focused .selectedValue {
+  box-shadow: 0 0 2px #00aedb;
+}
+.customSelect.disabled .selectedValue {
+  border: 1px solid #ccc;
+  color: #ccc;
+  cursor: default;
+}
+.customSelect .caret {
+  position: absolute;
+  top: 50%;
+  right: 2px;
+  margin-top: -5px;
+  cursor: pointer;
+  @include img('select-arrow.png');
+  width: 15px;
+  height: 8px;
+  transform: scale(.75);
+}
+
+.customSelect.select-open .caret {
+  @include img('select-arrow-reversed.png')
+}
+.customSelect .jspPane {
+  overflow-x: hidden;
+}
+.customSelect .jspVerticalBar {
+  background: none;
+  width: 8px;
+}
+.customSelect .jspHorizontalBar {
+  height: 0;
+  overflow: hidden;
+}
+.customSelect .jspTrack {
+  background: none;
+  width: 4px;
+  margin: 4px 0;
+}
+.customSelect .jspDrag {
+  border-radius: 2px / 3px;
+  background-color: rgba(247,247,247,.85);
+}
+/*
+ * CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them.
+ */
+.jspContainer
+{
+  overflow: hidden;
+  position: relative;
+}
+
+.jspPane
+{
+  position: absolute;
+}
+
+.jspVerticalBar
+{
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 16px;
+  height: 100%;
+  background: red;
+}
+
+.jspHorizontalBar
+{
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 16px;
+  background: red;
+}
+
+.jspVerticalBar *,
+.jspHorizontalBar *
+{
+  margin: 0;
+  padding: 0;
+}
+
+.jspCap
+{
+  display: none;
+}
+
+.jspHorizontalBar .jspCap
+{
+  float: left;
+}
+
+.jspTrack
+{
+  background: #dde;
+  position: relative;
+}
+
+.jspDrag
+{
+  background: #bbd;
+  position: relative;
+  top: 0;
+  left: 0;
+  cursor: pointer;
+}
+
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag
+{
+  float: left;
+  height: 100%;
+}
+
+.jspArrow
+{
+  background: #50506d;
+  text-indent: -20000px;
+  display: block;
+  cursor: pointer;
+}
+
+.jspArrow.jspDisabled
+{
+  cursor: default;
+  background: #80808d;
+}
+
+.jspVerticalBar .jspArrow
+{
+  height: 16px;
+}
+
+.jspHorizontalBar .jspArrow
+{
+  width: 16px;
+  float: left;
+  height: 100%;
+}
+
+.jspVerticalBar .jspArrow:focus
+{
+  outline: none;
+}
+
+.jspCorner
+{
+  background: #eeeef4;
+  float: left;
+  height: 100%;
+}
+
+/* Yuk! CSS Hack for IE6 3 pixel bug :( */
+* html .jspCorner
+{
+  margin: 0 -3px 0 0;
 }

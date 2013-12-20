@@ -29,8 +29,8 @@
             <ul class="this__dropdown__notificationsList">
               <li class="this__dropdown__notification">
                 <div class="left">
-                  <img src="http://fakeimg.pl/32x32/?text=Hello">
-                  <b>Able</b>
+                  <img class="this__dropdown__notification__img" src="http://fakeimg.pl/32x32/?text=Hello">
+                  <span class="this__dropdown__notification__text"><b>Able</b> just viewed our profile.</span>
                 </div>
                 <div class="right  l-hLine">
                   <button class="button  radius  tiny  secondary">Accept</button>
@@ -46,15 +46,15 @@
           <div class="this__dropdown">
             <ul class="this__dropdown__notificationsList">
               <li class="this__dropdown__notification">
-                <img src="http://fakeimg.pl/32x32/?text=Hello">
-                <div>
+                <div class="this__dropdown__notification__img"><img src="http://fakeimg.pl/32x32/?text=Hello"></div>
+                <div class="this__dropdown__notification__text">
                   <div><b>Able</b></div>
                   <div>just viewed our profile.</div>
                 </div>
               </li>
               <li class="this__dropdown__notification">
-                <img src="http://fakeimg.pl/32x32/?text=Hello">
-                <div>
+                <div class="this__dropdown__notification__img"><img src="http://fakeimg.pl/32x32/?text=Hello"></div>
+                <div class="this__dropdown__notification__text">
                   <div><b>Able</b></div>
                   <div><b>Lorem ipsum</b> dolor sit amet</div>
                 </div>
@@ -68,24 +68,35 @@
           <div class="this__dropdown">
             <ul class="this__dropdown__notificationsList">
               <li class="this__dropdown__notification">
-                <img src="http://fakeimg.pl/32x32/?text=Hello">
-                <b>Able</b> just viewed our profile.
+                <div class="this__dropdown__notification__img"><img src="http://fakeimg.pl/32x32/?text=Hello"></div>
+                <span class="this__dropdown__notification__text"><b>Able</b> just viewed our profile.</span>
               </li>
               <li class="this__dropdown__notification">
-                <img src="http://fakeimg.pl/32x32/?text=Hello">
-                <b>Lorem ipsum</b> dolor sit amet, consectetur adipisicing elit. Accusantium alias dolore maxime quia vero. Ab consequatur consequuntur fuga obcaecati quo velit, voluptatum. Aut consectetur labore, laborum nesciunt quasi similique voluptatem?
+                <div class="this__dropdown__notification__img"><img src="http://fakeimg.pl/32x32/?text=Hello"></div>
+                <span class="this__dropdown__notification__text"><b>Able</b> just viewed our profile.</span>
               </li>
             </ul>
             <footer class="this__dropdown__footer">See all Invites</footer>
           </div>
         </li>
+        <li class="this__userMenu">
+        <!--<li class="this__userMenu  is-active">-->
+          <a href="#" class="this__userMenu__label">UserName</a>
+          <div class="this__dropdown">
+            <ul class="this__dropdown__notificationsList">
+              <li class="this__dropdown__notification">
+                <a href="#">Profile</a>
+              </li>
+              <li class="this__dropdown__notification">
+                <a href="#">Edit</a>
+              </li>
+              <li class="this__dropdown__notification">
+                <a href="#">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </li>
       </ul>
-      <select>
-        <option>Disable 100500</option>
-        <option>Able</option>
-        <option>Disable</option>
-        <option>Disable 100500</option>
-      </select>
     </div>
   </div>
 
@@ -93,23 +104,23 @@
     <!--navigation-->
     <nav class="top-bar" data-topbar>
       <section class="top-bar-section">
-        <!-- Left Nav Section -->
-        <ul class="left">
+        <!--search form-->
+        <ul class="right">
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+          <li class="has-form">
+            <form class="search">
+              <input class="search__field" type="search" placeholder="Search by ID"/>
+            </form>
+          </li>
+        </ul>
+        <!--nav list-->
+        <ul class="left  top-bar-main-list">
           <li><a href="#">Find</a></li>
           <li><a href="#">Bookmarks</a></li>
           <li><a href="#">Connections</a></li>
           <li><a href="#">Notifications</a></li>
           <li><a href="#">Messages</a></li>
           <li><a href="#">Invites</a></li>
-        </ul>
-
-        <!--search form-->
-        <ul class="right">
-          <li class="has-form">
-            <form class="search">
-              <input class="search__field" type="search" placeholder="Search by ID"/>
-            </form>
-          </li>
         </ul>
       </section>
     </nav>
@@ -120,22 +131,398 @@
 <!--MAIN start-->
 <div class="l-main" role="main">
 
-  <div class="row">
-    <h2>Project navigation</h2>
-    <ul style="font-size: 19px;">
-      <li><a href="table.html">Table</a></li>
-      <li><a href="search-list.html">Search list</a></li>
-    </ul>
-  </div>
-
   <!--Template: invitations-->
   <!--include "templates/invitations"-->
 
   <!--Template: find-->
-  <!--include "templates/search"-->
+  <div class="row">
+
+    <!--sidebar-->
+    <aside class="search-settings">
+      <div class="this__section">
+        <h2 class="this__section__title">General search</h2>
+        <ul class="this__section__list--selected">
+          <li>
+            <a href="#">Level 1</a>
+            <ul>
+              <li>
+                <a href="#">Level 2</a>
+                <a href="#">Level 2</a>
+                <ul>
+                  <li><a href="#">Level 3</a>
+                    <ul>
+                      <li><a href="">Level 4</a></li>
+                      <li><a href="">Level 4</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+      <div class="this__section">
+        <h2 class="this__section__title">Search</h2>
+        <ul class="this__section__list">
+          <li><a href="#">Women</a></li>
+          <li><a href="#">Men</a></li>
+        </ul>
+      </div>
+      <div class="this__section">
+        <h2 class="this__section__title">Age</h2>
+        <div class="this__selectWrap">
+          <select class="left">
+            <option value="">From this to this</option>
+            <option value="">Another very long option</option>
+            <option value="">x x x x x x x x x x x x x x x x x x x x x x x x x x x x </option>
+            <option value="">From</option>
+            <option value="">From</option>
+            <option value="">From</option>
+            <option value="">From</option>
+            <option value="">From</option>
+            <option value="">From</option>
+            <option value="">From</option>
+            <option value="">From</option>
+            <option value="">From</option>
+            <option value="">From</option>
+          </select>
+          <select class="right">
+            <option value="">From this to this</option>
+            <option value="">Another very long option</option>
+            <option value="">x x x x x x x x x x x x x x x x x x x x x x x x x x x x </option>
+            <option value="">From</option>
+            <option value="">From</option>
+            <option value="">From</option>
+            <option value="">From</option>
+            <option value="">From</option>
+            <option value="">From</option>
+            <option value="">From</option>
+            <option value="">From</option>
+            <option value="">From</option>
+            <option value="">From</option>
+          </select>
+        </div>
+      </div>
+      <div class="this__section">
+        <h2 class="this__section__title">Height</h2>
+        <div class="this__selectWrap">
+          <select class="left">
+            <option value="">From</option>
+          </select>
+          <select class="right">
+            <option value="">To</option>
+          </select>
+        </div>
+      </div>
+      <div class="this__section">
+        <h2 class="this__section__title">Status</h2>
+        <ul class="this__section__list">
+          <li><a class="is-active" href="#">Any</a></li>
+          <li><a class="is-active" href="#">Single</a></li>
+          <li><a href="#">Divorced</a></li>
+          <li><a href="#">Widowed</a></li>
+        </ul>
+        <footer class="this__section__expander">More</footer>
+      </div>
+      <div class="this__section">
+        <h2 class="this__section__title">Status</h2>
+        <ul class="this__section__list">
+          <li><a class="is-active" href="#">Any</a></li>
+          <li><a href="#">Single</a></li>
+          <li><a href="#">Single</a></li>
+          <li><a href="#">Single</a></li>
+          <li><a href="#">Divorced</a></li>
+          <li><a href="#">Divorced</a></li>
+          <li><a href="#">Divorced</a></li>
+          <li><a href="#">Divorced</a></li>
+          <li><a href="#">Divorced</a></li>
+          <li><a href="#">Divorced</a></li>
+          <li><a href="#">Divorced</a></li>
+          <li><a href="#">Divorced</a></li>
+          <li><a href="#">Divorced</a></li>
+          <li><a href="#">Widowed</a></li>
+          <li><a href="#">Widowed</a></li>
+          <li><a href="#">Widowed</a></li>
+          <li><a href="#">Widowed</a></li>
+          <li><a href="#">Widowed</a></li>
+          <li><a href="#">Widowed</a></li>
+          <li><a href="#">Widowed</a></li>
+          <li><a href="#">Widowed</a></li>
+          <li><a href="#">Widowed</a></li>
+        </ul>
+        <footer class="this__section__expander  is-active">Less</footer>
+      </div>
+      <div class="this__section">
+        <h2 class="this__section__title">Status</h2>
+        <ul class="this__section__list">
+          <li><a href="#">Any</a></li>
+          <li><a href="#">Single</a></li>
+          <li><a href="#">Divorced</a></li>
+          <li><a href="#">Divorced</a></li>
+          <li><a href="#">Widowed</a></li>
+        </ul>
+        <footer class="this__section__expander">More</footer>
+      </div>
+    </aside>
+    <!--sidebar-->
+
+
+    <!--main column-->
+    <main class="search-results">
+      <header class="this__header">
+        <h1 class="this__title">Women</h1>
+        <select>
+          <option value="">Random</option>
+          <option value="">Price</option>
+          <option value="">Other</option>
+        </select>
+      </header>
+
+      <ul class="search-results__list">
+        <li>
+          <div class="search-results__unit">
+            <div class="this__photo">
+              <img  src="http://fakeimg.pl/235x235/?text=235x235">
+              <!--bookmark this-->
+              <div class="this__bookmark">
+                <button class="button radius tiny  primary  is-active">Bookmark</button>
+                <div class="ui-button__dropdown  primary">
+                  <button class="button radius tiny  primary">Unbookmark</button>
+                </div>
+              </div>
+              <!--resize this-->
+              <a class="this__resize" href="#">Scale photo</a>
+            </div>
+            <div class="this__info">
+              <p><strong><b>India, New Delhi</b></strong>
+              <p><b>24 Years | Malayalam</b>
+              <p><strong>4 Feet 9 Inches</strong>
+              <p><b>Christian  |  Roman Catholic</b>
+              <div class="this__invite">
+                <button class="button radius tiny  secondary  is-active">Accept</button>
+                <div class="ui-button__dropdown  secondary">
+                  <button class="button radius tiny  secondary">Decline</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="search-results__unit">
+            <div class="this__photo">
+              <img  src="http://fakeimg.pl/235x235/?text=235x235">
+              <!--bookmark this-->
+              <div class="this__bookmark">
+                <button class="button radius tiny  primary">Bookmark</button>
+              </div>
+              <!--resize this-->
+              <a class="this__resize" href="#">Scale photo</a>
+            </div>
+            <div class="this__info">
+              <p><strong><b>India, New Delhi</b></strong>
+              <p><b>24 Years | Malayalam</b>
+              <p><strong>4 Feet 9 Inches</strong>
+              <p><b>Christian  |  Roman Catholic</b>
+              <div class="this__invite">
+                <button class="button radius tiny  secondary  icon-plus">Bookmark</button>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="search-results__unit">
+            <div class="this__photo">
+              <img  src="http://fakeimg.pl/235x235/?text=235x235">
+              <!--bookmark this-->
+              <div class="this__bookmark">
+                <button class="button radius tiny  primary">Bookmark</button>
+              </div>
+              <!--resize this-->
+              <a class="this__resize" href="#">Scale photo</a>
+            </div>
+            <div class="this__info">
+              <p><strong><b>India, New Delhi</b></strong>
+              <p><b>24 Years | Malayalam</b>
+              <p><strong>4 Feet 9 Inches</strong>
+              <p><b>Christian  |  Roman Catholic</b>
+              <div class="this__invite">
+                <button class="button radius tiny  secondary">Bookmark</button>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="search-results__unit">
+            <div class="this__photo">
+              <img  src="http://fakeimg.pl/235x235/?text=235x235">
+              <!--bookmark this-->
+              <div class="this__bookmark">
+                <button class="button radius tiny  primary">Bookmark</button>
+              </div>
+              <!--resize this-->
+              <a class="this__resize" href="#">Scale photo</a>
+            </div>
+            <div class="this__info">
+              <p><strong><b>India, New Delhi</b></strong>
+              <p><b>24 Years | Malayalam</b>
+              <p><strong>4 Feet 9 Inches</strong>
+              <p><b>Christian  |  Roman Catholic</b>
+              <div class="this__invite">
+                <button class="button radius tiny  secondary">Bookmark</button>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="search-results__unit">
+            <div class="this__photo">
+              <img  src="http://fakeimg.pl/235x235/?text=235x235">
+              <!--bookmark this-->
+              <div class="this__bookmark">
+                <button class="button radius tiny  primary">Bookmark</button>
+              </div>
+              <!--resize this-->
+              <a class="this__resize" href="#">Scale photo</a>
+            </div>
+            <div class="this__info">
+              <p><strong><b>India, New Delhi</b></strong>
+              <p><b>24 Years | Malayalam</b>
+              <p><strong>4 Feet 9 Inches</strong>
+              <p><b>Christian  |  Roman Catholic</b>
+              <div class="this__invite">
+                <button class="button radius tiny  secondary">Bookmark</button>
+              </div>
+            </div>
+          </div>
+        </li>
+        <li>
+          <div class="search-results__unit">
+            <div class="this__photo">
+              <img  src="http://fakeimg.pl/235x235/?text=235x235">
+              <!--bookmark this-->
+              <div class="this__bookmark">
+                <button class="button radius tiny  primary">Bookmark</button>
+              </div>
+              <!--resize this-->
+              <a class="this__resize" href="#">Scale photo</a>
+            </div>
+            <div class="this__info">
+              <p><strong><b>India, New Delhi</b></strong>
+              <p><b>24 Years | Malayalam</b>
+              <p><strong>4 Feet 9 Inches</strong>
+              <p><b>Christian  |  Roman Catholic</b>
+              <div class="this__invite">
+                <button class="button radius tiny  secondary">Bookmark</button>
+              </div>
+            </div>
+          </div>
+        </li>
+      </ul>
+
+      <a style="font-size: 18px;" href="#" data-reveal-id="profile-1">Popup with User Profile</a>
+    </main>
+    <!--end center column-->
+
+
+
+  </div>
 
   <!--Popup with user profile-->
-  <!--include "templates/profile"-->
+  <div id="profile-1" class="reveal-modal  user-profile" data-reveal>
+    <header class="this__header">
+      <div class="this__header__left">
+        <h2 class="this__title">Able Joseph Sarath Nair</h2>
+        <div class="this__header__info">
+          <span>Ref. ID 1234XYZ</span>
+          <span class="this__email">Varunjosephkurien@hotmailer.com</span>
+          <span class="this__tel">+9715521166056</span>
+        </div>
+      </div>
+      <div class="this__header__right">
+        <button class="button tiny radius  primary">Bookmark</button>
+        <button class="button tiny radius  secondary  icon-plus">Connect</button>
+      </div>
+    </header>
+
+    <div class="row">
+      <div class="this__mainPhoto">
+        <img src="http://fakeimg.pl/350x350/?text=350x350">
+      </div>
+
+      <div class="this__about">
+        <h3>About</h3>
+        <p>
+          This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.
+          Proin condimentum fermentum nunc. Etiam pharetra, erat
+        </p>
+        <hr/>
+        <h3>More <a href="#">Images</a></h3>
+        <ul class="this__otherPhotosList">
+          <li><img src="http://fakeimg.pl/125x125/?text=Img1"></li>
+          <li><img src="http://fakeimg.pl/125x125/?text=Img2"></li>
+          <li><img src="http://fakeimg.pl/125x125/?text=Img3"></li>
+          <li><img src="http://fakeimg.pl/125x125/?text=Img4"></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="this__detailedInfo">
+      <div class="this__detailedInfo__lt">
+        <h3>Appearance</h3>
+        <dl>
+          <dt>Height</dt>
+          <dd>5 Feet 7 Inches</dd>
+          <dt>Height</dt>
+          <dd>5 Feet 7 Inches</dd>
+          <dt>Height</dt>
+          <dd>5 Feet 7 Inches</dd>
+          <dt>Height</dt>
+          <dd>5 Feet 7 Inches</dd>
+          <dt>Height</dt>
+          <dd>5 Feet 7 Inches</dd>
+          <dt>Height</dt>
+          <dd>5 Feet 7 Inches</dd>
+          <dt>Height</dt>
+          <dd>5 Feet 7 Inches</dd>
+          <dt>Height</dt>
+          <dd>5 Feet 7 Inches</dd>
+          <dt>Height</dt>
+          <dd>5 Feet 7 Inches</dd>
+        </dl>
+      </div>
+      <div class="this__detailedInfo__rt">
+        <h3>Personal</h3>
+        <dl>
+          <dt>Height</dt>
+          <dd>5 Feet 7 Inches</dd>
+          <dt>Height</dt>
+          <dd>5 Feet 7 Inches</dd>
+          <dt>Height</dt>
+          <dd>5 Feet 7 Inches</dd>
+          <dt>Height</dt>
+          <dd>5 Feet 7 Inches</dd>
+          <dt>Height</dt>
+          <dd>5 Feet 7 Inches</dd>
+          <dt>Height</dt>
+          <dd>5 Feet 7 Inches</dd>
+          <dt>Height</dt>
+          <dd>5 Feet 7 Inches</dd>
+          <dt>Height</dt>
+          <dd>5 Feet 7 Inches</dd>
+          <dt>Height</dt>
+          <dd>5 Feet 7 Inches</dd>
+          <dt>Height</dt>
+          <dd>5 Feet 7 Inches</dd>
+          <dt>Height</dt>
+          <dd>5 Feet 7 Inches</dd>
+          <dt>Height</dt>
+          <dd>5 Feet 7 Inches</dd>
+        </dl>
+      </div>
+    </div>
+
+    <a class="close-reveal-modal"></a>
+  </div>
 
 
 </div>
@@ -201,6 +588,8 @@
     
 <script src="bower_components/jquery/jquery.min.js"></script>
 <script src="bower_components/foundation/js/foundation.min.js"></script>
+
+<script src="js/plugins.min.js"></script>
 <script src="js/app.js"></script>
 
 

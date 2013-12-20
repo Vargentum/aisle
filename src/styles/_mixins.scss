@@ -57,3 +57,22 @@
   text-shadow: none;
   color: transparent;
 }
+
+
+
+/*------------------------------------*\
+  Responcive helpers
+\*------------------------------------*/
+
+
+@mixin breakpoint($val){
+  @media only screen and (max-width: $val){
+    @content
+  }
+}
+@mixin fluid-width($width, $parentWidth){
+  width: $width / $parentWidth * 100%
+}
+@mixin fluid-prop($prop, $width, $parentWidth){
+  #{$prop}: $width / $parentWidth * 100%
+}

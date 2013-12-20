@@ -29,8 +29,8 @@
             <ul class="this__dropdown__notificationsList">
               <li class="this__dropdown__notification">
                 <div class="left">
-                  <img src="http://fakeimg.pl/32x32/?text=Hello">
-                  <b>Able</b>
+                  <img class="this__dropdown__notification__img" src="http://fakeimg.pl/32x32/?text=Hello">
+                  <span class="this__dropdown__notification__text"><b>Able</b> just viewed our profile.</span>
                 </div>
                 <div class="right  l-hLine">
                   <button class="button  radius  tiny  secondary">Accept</button>
@@ -46,15 +46,15 @@
           <div class="this__dropdown">
             <ul class="this__dropdown__notificationsList">
               <li class="this__dropdown__notification">
-                <img src="http://fakeimg.pl/32x32/?text=Hello">
-                <div>
+                <div class="this__dropdown__notification__img"><img src="http://fakeimg.pl/32x32/?text=Hello"></div>
+                <div class="this__dropdown__notification__text">
                   <div><b>Able</b></div>
                   <div>just viewed our profile.</div>
                 </div>
               </li>
               <li class="this__dropdown__notification">
-                <img src="http://fakeimg.pl/32x32/?text=Hello">
-                <div>
+                <div class="this__dropdown__notification__img"><img src="http://fakeimg.pl/32x32/?text=Hello"></div>
+                <div class="this__dropdown__notification__text">
                   <div><b>Able</b></div>
                   <div><b>Lorem ipsum</b> dolor sit amet</div>
                 </div>
@@ -68,24 +68,35 @@
           <div class="this__dropdown">
             <ul class="this__dropdown__notificationsList">
               <li class="this__dropdown__notification">
-                <img src="http://fakeimg.pl/32x32/?text=Hello">
-                <b>Able</b> just viewed our profile.
+                <div class="this__dropdown__notification__img"><img src="http://fakeimg.pl/32x32/?text=Hello"></div>
+                <span class="this__dropdown__notification__text"><b>Able</b> just viewed our profile.</span>
               </li>
               <li class="this__dropdown__notification">
-                <img src="http://fakeimg.pl/32x32/?text=Hello">
-                <b>Lorem ipsum</b> dolor sit amet, consectetur adipisicing elit. Accusantium alias dolore maxime quia vero. Ab consequatur consequuntur fuga obcaecati quo velit, voluptatum. Aut consectetur labore, laborum nesciunt quasi similique voluptatem?
+                <div class="this__dropdown__notification__img"><img src="http://fakeimg.pl/32x32/?text=Hello"></div>
+                <span class="this__dropdown__notification__text"><b>Able</b> just viewed our profile.</span>
               </li>
             </ul>
             <footer class="this__dropdown__footer">See all Invites</footer>
           </div>
         </li>
+        <li class="this__userMenu">
+        <!--<li class="this__userMenu  is-active">-->
+          <a href="#" class="this__userMenu__label">UserName</a>
+          <div class="this__dropdown">
+            <ul class="this__dropdown__notificationsList">
+              <li class="this__dropdown__notification">
+                <a href="#">Profile</a>
+              </li>
+              <li class="this__dropdown__notification">
+                <a href="#">Edit</a>
+              </li>
+              <li class="this__dropdown__notification">
+                <a href="#">Logout</a>
+              </li>
+            </ul>
+          </div>
+        </li>
       </ul>
-      <select>
-        <option>Disable 100500</option>
-        <option>Able</option>
-        <option>Disable</option>
-        <option>Disable 100500</option>
-      </select>
     </div>
   </div>
 
@@ -93,23 +104,23 @@
     <!--navigation-->
     <nav class="top-bar" data-topbar>
       <section class="top-bar-section">
-        <!-- Left Nav Section -->
-        <ul class="left">
+        <!--search form-->
+        <ul class="right">
+          <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+          <li class="has-form">
+            <form class="search">
+              <input class="search__field" type="search" placeholder="Search by ID"/>
+            </form>
+          </li>
+        </ul>
+        <!--nav list-->
+        <ul class="left  top-bar-main-list">
           <li><a href="#">Find</a></li>
           <li><a href="#">Bookmarks</a></li>
           <li><a href="#">Connections</a></li>
           <li><a href="#">Notifications</a></li>
           <li><a href="#">Messages</a></li>
           <li><a href="#">Invites</a></li>
-        </ul>
-
-        <!--search form-->
-        <ul class="right">
-          <li class="has-form">
-            <form class="search">
-              <input class="search__field" type="search" placeholder="Search by ID"/>
-            </form>
-          </li>
         </ul>
       </section>
     </nav>
@@ -120,22 +131,14 @@
 <!--MAIN start-->
 <div class="l-main" role="main">
 
-  <div class="row">
-    <h2>Project navigation</h2>
-    <ul style="font-size: 19px;">
-      <li><a href="table.html">Table</a></li>
-      <li><a href="search-list.html">Search list</a></li>
-    </ul>
-  </div>
-
   <!--Template: invitations-->
   <!--include "templates/invitations"-->
 
   <!--Template: find-->
-  <!--include "templates/search"-->
+  include "templates/search"
 
   <!--Popup with user profile-->
-  <!--include "templates/profile"-->
+  include "templates/profile"
 
 
 </div>
@@ -201,6 +204,8 @@
     
 <script src="bower_components/jquery/jquery.min.js"></script>
 <script src="bower_components/foundation/js/foundation.min.js"></script>
+
+<script src="js/plugins.min.js"></script>
 <script src="js/app.js"></script>
 
 
