@@ -642,6 +642,13 @@ ul.pagination{
         }
       }
     }
+    .jspDrag{
+      background-color: #7c7c7c;
+    }
+    .jspVerticalBar,
+    .jspHorizontalBar{
+      width: 7px;
+    }
   }
   .this__section__list--selected{
     padding: 0;

@@ -8825,6 +8825,15 @@ ul.pagination .control-prev a:focus {
   background-position: 50% 50%;
 }
 
+.search-settings .this__section__list .jspDrag {
+  background-color: #7c7c7c;
+}
+
+.search-settings .this__section__list .jspVerticalBar,
+.search-settings .this__section__list .jspHorizontalBar {
+  width: 7px;
+}
+
 .search-settings .this__section__list--selected {
   padding: 0;
   margin: 0;
