@@ -7704,7 +7704,8 @@ th.hide-for-touch {
 }
 
 .events > ul > li:hover .this__dropdown {
-  display: block;
+  left: auto;
+  right: 15px;
 }
 
 .events .this__label--connections {
@@ -7819,10 +7820,10 @@ th.hide-for-touch {
 }
 
 .events .this__dropdown {
-  display: none;
   position: absolute;
+  z-index: 101;
   top: 100%;
-  right: 15px;
+  left: -9999px;
   background-color: white;
   border: 1px solid #bdbebd;
 }
@@ -7873,6 +7874,10 @@ th.hide-for-touch {
   vertical-align: middle;
 }
 
+.events .this__dropdown__notification:last-child {
+  border-bottom: none;
+}
+
 .events .this__dropdown__notification:hover {
   background-color: #dedede;
 }
@@ -7901,6 +7906,7 @@ th.hide-for-touch {
   color: #2d2d2d;
   font-size: 12px;
   cursor: pointer;
+  border-top: 1px solid #bdbebd;
 }
 
 .events .this__userMenu {
@@ -7962,10 +7968,18 @@ th.hide-for-touch {
     text-align: center;
   }
 
+  .events > ul > li:hover .this__dropdown {
+    right: auto;
+    left: 15px;
+  }
+
+  .events > ul > li:hover.this__userMenu .this__dropdown {
+    left: auto;
+    right: 15px;
+  }
+
   .events .this__dropdown {
     width: 250px;
-    left: 0;
-    right: auto;
   }
 
   .events .this__dropdown:before {
@@ -7979,8 +7993,6 @@ th.hide-for-touch {
 
   .events .this__userMenu .this__dropdown {
     width: 150px;
-    left: auto;
-    right: 15px;
   }
 
   .events .this__userMenu .this__dropdown:before {
@@ -8737,6 +8749,24 @@ ul.pagination .control-prev a:focus {
   justify-content: space-between;
 }
 
+@media only screen and (max-width: 980px) {
+  .search-settings .this__selectWrap {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    flex-direction: column;
+  }
+
+  .search-settings .this__selectWrap .customSelect {
+    margin-bottom: 10px;
+  }
+
+  .search-settings .this__selectWrap .customSelect:last-child {
+    margin-bottom: 0;
+  }
+}
+
 .search-settings .this__section__title {
   color: #333333;
   font-size: 14px;
@@ -8930,6 +8960,10 @@ ul.pagination .control-prev a:focus {
   -ms-transform: scale(1);
   transform: scale(1);
   right: 7px;
+}
+
+.search-results .this__header .customSelect dd {
+  font-size: 14px;
 }
 
 .search-results .this__header .selectedValue {
@@ -9685,7 +9719,7 @@ select {
 
 .customSelect dd {
   padding: 2px 10px 2px 8px;
-  font-size: inherit;
+  font-size: 11px;
   border-top: 1px solid transparent;
   border-bottom: 1px solid #666666;
   background-color: #d5d5d5;
@@ -9749,7 +9783,6 @@ select {
 }
 
 .customSelect .jspDrag {
-  border-radius: 2px/3px;
   background-color: rgba(247, 247, 247, 0.85);
 }
 
@@ -9773,9 +9806,9 @@ select {
   position: absolute;
   top: 0;
   right: 0;
-  width: 16px;
+  width: 8px;
   height: 100%;
-  background: red;
+  background: transparent;
 }
 
 .jspHorizontalBar {
@@ -9783,8 +9816,8 @@ select {
   bottom: 0;
   left: 0;
   width: 100%;
-  height: 16px;
-  background: red;
+  height: 8px;
+  background: transparent;
 }
 
 .jspVerticalBar *,
@@ -9802,12 +9835,15 @@ select {
 }
 
 .jspTrack {
-  background: #ddddee;
+  background: transparent;
+  width: 4px;
+  margin: 4px 0;
   position: relative;
 }
 
 .jspDrag {
-  background: #bbbbdd;
+  border-radius: 2px/3px;
+  background-color: #b2b2b2;
   position: relative;
   top: 0;
   left: 0;

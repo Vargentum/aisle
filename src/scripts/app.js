@@ -10,4 +10,6 @@ $(function() {
     });
   });
 
+  $('.js-scrollbar').jScrollPane();
+
 });
