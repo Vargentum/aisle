@@ -1,0 +1,79 @@
+/*------------------------------------*\
+    Default styles reset
+\*------------------------------------*/
+global-reset()
+
+/*------------------------------------*\
+    Border-box mode (paddings and borders doesn't adding to width value)
+\*------------------------------------*/
+*,*:before,*:after
+  box-sizing: border-box
+
+/*------------------------------------*\
+    Some useful classes
+\*------------------------------------*/
+.l-hLine
+  hLine()
+
+.l-jLine
+  jLine()
+
+for $i in bottom middle top float
+  .l-hLine--{$i}
+    hLine($i)
+  .l-jLine--{$i}
+    jLine($i)
+
+
+.l-container
+  container()
+
+.hide-text, .text-hide
+  hide-text()
+
+.list-reset, .reset-list
+  reset-box-model()
+  list-style-type none
+  list-style-image none
+  li
+    reset-box-model()
+
+    
+.reset
+  reset-box-model()
+
+.reset-font, .font-reset
+  reset-font()
+
+/*------------------------------------*\
+    FONTS
+\*------------------------------------*/
+
+@import url('http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic')
+
+for $font-face in testFontName
+  @font-face
+    font-family: $font-face
+    font-style: normal
+    font-weight: normal
+    src: url('../fonts/'+$font-face+'.eot')
+    src: url('../fonts/'+$font-face+'.eot?#iefix') format("embedded-opentype"),
+         url('../fonts/'+$font-face+'.woff') format("woff")
+
+
+
+/*------------------------------------*\
+    Inject variables into base tags
+\*------------------------------------*/
+html, button, input, select, textarea
+  font-family: $baseFamily
+  color: $baseFontColor
+
+html
+  height: 100%
+
+body
+  height: 100%
+  font-size: $baseFontSize
+  line-height: $baseLineHeight
+

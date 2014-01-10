@@ -1,0 +1,1405 @@
+@import "modules/variables"
+@import "modules/mixins"
+@import "modules/assets"
+
+
+/*------------------------------------*\
+  Styling for default UI elements
+\*------------------------------------*/
+
+for $type in text password datetime datetime-local date month time week number email url search tel
+  [type={$type}]
+    height: $inputHeight
+    border: #b6b8b7
+    border-radius: 2px
+    padding: 0 10px
+    placeholder #b5b7b7
+    label &
+      width: 100%
+
+for $type in radio checkbox
+  [type={$type}]{}
+
+textarea
+  vertical-align: top
+  resize: none
+  min-height 100px
+  border: #b6b8b7
+  border-radius: 2px
+  padding: 5px 10px
+  placeholder #b5b7b7
+  label &
+    width: 100%
+
+button
+  border: none
+  background-color: transparent
+
+
+label
+  display block
+  span
+    display block
+    margin-bottom: 2px
+
+
+
+a
+  color: $linkColor
+  text-decoration: none
+  &:hover
+    color $hoveredLinkColor
+    text-decoration: none
+  &:focus
+    color $focusedLinkColor
+    outline: thin dotted
+  &:active
+    color $activeLinkColor
+  &:visited
+    color $visitedLinkColor
+
+
+
+body
+  background-color: $bodyColor
+
+
+/*------------------------------------*\
+    Custom UI elements
+\*------------------------------------*/
+//.ui-
+
+
+
+
+
+/*------------------------------------*\
+    HEADER
+\*------------------------------------*/
+.l-header
+  position: relative
+  padding-bottom: 20px
+
+.l-header__row
+  container()
+  jLine middle
+  padding: 20px 0 0
+
+.logo
+  text-decoration: none
+  img
+    display inline-block
+
+.events
+  text-align: right
+  hLine middle
+  position relative
+  z-index: 10
+  &>li
+    position relative
+    padding: 0 15px
+    border-right: 1px solid #d5d5d5
+    &:hover
+      .this__dropdown
+        left auto
+        right: 15px
+
+  .this__label--connections,
+  .this__label--messages,
+  .this__label--notifications
+    display block
+    relative bottom 9px left 12px
+    text-align: center
+    font-weight bold
+    c1(#fff)
+    font-size: 12px
+    size 20px
+    line-height: 20px
+    background-color $secondary-color
+    border-radius: 50%
+    &:before
+      pb(top 9px right 12px)
+      z-index: -1
+      size 16px
+
+  for $i in connections messages notifications
+    .this__label--{$i}:before
+      img('events-'+$i+'.png')
+
+  .this__dropdown
+    absolute top 100% left -9999px
+    z-index: 101
+    background-color: #fff
+    border #bdbebd
+    //arrow
+    &:before
+      pb(right 0 bottom 100%)
+      img('dropdown-arrow.png')
+      size 12px 7px
+
+  .this__dropdown__notificationsList
+    max-height: 170px
+    overflow-y: auto
+  
+  .this__dropdown__notification
+    clearfix()
+    hLine(middle)
+    max-width: 500px
+    ellipsis()
+    text-align: left
+    padding: 11px
+    font-size: 12px
+    border-bottom: 1px solid #bdbebd
+    cursor: pointer
+    &:last-child
+      border-bottom: none
+    &:hover
+      background-color: #dedede
+    .button
+      padding: 6px 12px
+    
+  
+  .this__dropdown__notification__img
+    display: inline-block
+    vertical-align: middle
+    size 32px
+    margin-right: 10px
+    img
+      size 100%
+      display: inline-block
+    
+
+  .this__dropdown__notification__text
+    display inline-block
+    vertical-align: middle
+
+  .this__dropdown__footer
+    padding: 10px
+    background-color: #f7f7f7
+    text-align: center
+    color: #2d2d2d
+    font-size: 12px
+    cursor: pointer
+    border-top: 1px solid #bdbebd
+  
+
+  .this__userMenu
+    border-right: none
+    a
+      c1(#333)
+    &.is-active:after
+       img('select-arrow-reversed.png')
+    
+    .this__dropdown__notification
+      width: 150px
+      &:last-child
+        border-bottom: none
+      
+    
+  
+  .this__userMenu__label
+    font-size: 14px
+    &:after
+      pi(baseline)
+      img('select-arrow.png')
+      size 15px 8px
+      margin-left: 7px
+    
+
+
+.mainNav
+  a
+    display block
+    padding: 0 15px
+    line-height: 1.2
+    c2(#656565, $primary-color)
+    font-weight: bold
+    border-left 1px solid #d5d5d5
+  li:first-child a
+    padding-left: 0
+    border-left none
+
+.search
+  width: 250px
+  position relative
+
+  .this__field
+    width:100%
+    padding-left: 32px
+    padding-right: 10px
+    color: #333
+  
+  .this__submit
+    hide-text()
+    text-indent 300%
+    pb(top 50% left 10px)
+    z-index: 1
+    img('search-icon.png')
+    size 16px
+    margin-top: -8px
+
+/*------------------------------------*\
+    CONTENT Zone
+\*------------------------------------*/
+select
+  cursor: pointer
+  &,&:hover
+    background-color: transparent
+    border: none
+    padding: 0 20px 0 5px
+    img('select-arrow.png','100% 50%')
+  
+
+
+.ui-island
+  border-top: 1px solid #d5d5d5
+  border-bottom: 1px solid #d5d5d5
+  padding: 20px 0
+
+.button
+  padding: 7px 15px
+  background-color: #fff
+  color: $baseFontColor
+  border #666
+  border-radius 2px
+
+  &.secondary
+    color: $secondary-color
+    border-color: $secondary-color
+    &:hover,&:focus,&.is-active
+      background-color: $secondary-color
+      color: #fff
+
+  &.primary
+    color: $primary-color
+    border-color: $primary-color
+    &:hover,&:focus,&.is-active
+      background-color: $primary-color
+      color: #fff
+
+
+
+  &.icon-plus
+    position: relative
+    &:before
+      pb(left 10px top 50%)
+      img('button-secondary-plus.png')
+      margin-top: -5px
+      size 9px
+  
+
+
+.ui-button__dropdown
+  background-color: #fff
+  border-width: 1px
+  border-style: solid
+  padding: 10px
+  position: absolute
+  top: 100%
+  z-index: 1
+  //triangle
+  &:before
+    pb(bottom 100% right 10px)
+    size 13px 7px
+  
+  &.primary
+    border-color: $primary-color
+    &:before
+      img('button-dropdown-primary.png')
+    
+  
+  &.secondary
+    border-color: $secondary-color
+    &:before
+      img('button-dropdown-secondary.png')
+    
+  
+  button
+    width: 107px !important
+  
+
+
+hr
+  margin: 10px 0
+  background-color: #d5d5d5
+
+
+.l-main
+  container()
+  clearfix()
+
+
+/*------------------------------------*\
+    FOOTER
+\*------------------------------------*/
+.l-footer
+  position: relative
+  container()
+
+.pagination
+  @extend .ui-island
+  hLine middle
+  text-align: center
+  a
+    display: block
+    size 30px
+    line-height: 30px
+    border-radius: 2px
+    border: #d5d5d5
+    c2(#d5d5d5, $primary-color)
+
+  .control-prev,
+  .control-next
+    display inline-block
+    hide-text()
+    border: none
+    img('pagination-prev.png')
+    &.is-disabled
+      display none
+
+  .control-next
+    img('pagination-next.png')
+
+  .is-active
+    border-color: $primary-color
+    c1($primary-color)
+
+
+.boxes
+  @extend .ui-island
+  border none
+  container()
+  jLine top
+  color: #999
+
+  for $i in 1..3
+    .this__unit--{$i}
+      width: 320px
+      background-color #f2f2f2
+      img('boxes-'+$i+'.png','20px 20px')
+      padding: 20px
+
+  .this__unit__title
+    font-weight: 400
+    font-size: 22px
+    color: #656565
+    margin: 0 0 5px
+    padding-left: 40px
+
+
+.l-footer__bottom
+  container()
+  @extend .ui-island
+  padding: 15px 0
+  border-top: none
+
+.serviceNav
+  hLine()
+  font-size: 12px
+  a
+    margin-right: 25px
+    c1(#333)
+    &:hover,&:focus
+      text-decoration: underline
+    
+  
+
+.socialNav
+  hLine(middle)
+  text-align: right
+  for $i in facebook twitter pinterest linkedin google instagram youtube
+    .this__unit--{$i}
+      hide-text()
+      display: block
+      size 16px
+      margin-left: 5px
+      img('social-'+$i+'.png')
+
+                        
+
+.safe-and-sequre
+  font-size: 12px
+  line-height: 16px
+  padding-left: 20px
+  img('safe-and-sequre.png','0 50%')
+
+/*------------------------------------*\
+    Template: invitations
+\*------------------------------------*/
+.event-table
+  width: 100%
+  border-collapse: collapse
+  td
+    @extend .ui-island
+  
+  tr:hover
+    td
+      background-color: #dedede
+
+  tr.is-active
+    &, &:hover
+      td
+        background-color: #f5f5f5
+
+
+  tr:last-child
+    td
+      border-bottom: none
+
+  .this__mainCell
+    hLine(middle)
+    padding: 0 20px
+    width: 60%
+
+  .this__userPic
+    size 45px
+    margin-right: 10px
+
+  .this__time
+    span
+      display: inline-block
+      padding: 0 10px
+      border-left: 1px solid #333
+      &:first-child
+        border-left: none
+
+
+
+
+/*------------------------------------*\
+    Template: search
+\*------------------------------------*/
+.search-settings
+  background-color: #f7f7f7
+  width: 235px
+  .this__section
+    color: #656565
+    background-color: #f7f7f7
+    padding: 12px 8px
+    border-bottom: 1px solid #d5d5d5
+    &:last-child
+      border-bottom: none
+    select
+      width:45%
+      margin-bottom: 5px
+      background-color: #d5d5d5
+      padding: 2px 5px
+      font-size: 11px
+      border-radius: 2px
+    
+  
+  .this__selectWrap
+    jLine middle
+  
+  .this__section__title
+    color: #333
+    font-size: 14px
+    font-weight: bold
+    text-transform: uppercase
+    margin: 0 0 5px
+  
+  .this__section__list
+    font-size: 11px
+    max-height: 240px
+    overflow-y: auto
+    a
+      display: block
+      position: relative
+      margin-bottom: 6px
+      transition: all .3s
+      c1(#656565)
+      &:hover,&:focus
+        padding-left: 10px
+      
+      &.is-active
+        background-color: #d5d5d5
+        border-radius: 2px
+        padding: 3px 5px
+        //close icon
+        &:after
+          pb(right 5px top 50%)
+          margin-top: -5px
+          size 9px
+          img('search-settings-item-unselect.png')
+        
+      
+    
+    .jspDrag
+      background-color: #7c7c7c
+    
+    .jspVerticalBar,
+    .jspHorizontalBar
+      width: 7px
+    
+  
+  .this__section__list--selected
+    font-size: 11px
+    
+    ul
+      margin-left: 10px
+      a
+        //chain
+        &:before
+          pb(top 50% right 100%)
+          img('list-chain.png')
+          size 6px 21px
+          margin-top: -16px
+    a
+      display: block
+      position: relative
+      c1(#656565)
+      margin-bottom: 5px
+      background-color: #d5d5d5
+      border-radius: 2px
+      padding: 3px 5px
+      //close icon
+      &:after
+        pb(right 5px top 50%)
+        margin-top: -5px
+        size 9px
+        img('search-settings-item-unselect.png')
+      
+    
+  
+  .this__section__expander
+    text-align: right
+    font-size: 11px
+    font-weight: bold
+    text-transform: uppercase
+    cursor: pointer
+    &:after
+      pi()
+      size 15px 8px
+      img('select-arrow.png')
+      margin-left: 5px
+    
+    &.is-active:after
+      img('select-arrow-reversed.png')
+
+
+
+.search-results
+  width: 730px
+  .this__header
+    @extend .ui-island
+    padding: 10px 0
+    jLine(middle)
+
+    .customSelect
+      font-size: 14px
+      .caret
+        transform: scale(1)
+        right:7px
+      
+      dd
+        font-size: 14px
+      
+    
+    .selectedValue
+      padding: 10px 5px 10px 10px
+    
+  
+  .this__title
+    color: #333
+    font-size: 20px
+    font-weight: 400
+  
+  select
+    width: 150px
+    padding: 5px 10px
+    border-radius: 2px
+    background-color: #d5d5d5
+
+  .this__list
+    hLine()
+    margin-left: -7px
+    &>li
+      margin-left: 7px
+
+  .button
+    width: 120px
+
+
+.person-profile
+  position: relative
+  clearfix()
+  width: 235px
+  margin-top: 20px
+  &:hover
+    background-color: #f7f7f7
+    .this__resize,
+    .this__bookmark,
+    .this__invite
+      display: block
+      visibility: visible
+    
+  
+  .this__photo
+    position: relative
+    padding-bottom: 5px
+    border-bottom: 1px solid #d5d5d5
+    img
+      width: 100%
+      height: auto
+      display: block
+    
+  
+  .this__info
+    clearfix
+    padding: 5px 15px
+    p
+      margin: 0
+      font-size: 12px
+    b
+      font-weight: bold
+    strong
+      font-size: 15px
+      font-weight: normal
+  
+
+  .this__resize
+    hide-text()
+    display: none
+    absolute(top right)
+    size 60px
+    img('search-result-resize.png')
+
+  .this__bookmark
+    display: none
+    absolute bottom 5px left
+    width: 100%
+    padding: 5px
+    background-color: rgba(255,255,255,.35)
+
+  .this__invite
+    margin: 5px -10px
+    float: right
+    visibility: hidden
+
+  .button
+    width: 129px
+    padding-top:    7px
+    padding-bottom: 7px
+    position: relative
+    &.is-active:before
+      pb()
+      img('arrow-button-active.png')
+      width: 11px
+      height: 6px
+      top: 50%
+      right: 10px
+      margin-top: -3px
+
+
+
+
+
+/*------------------------------------*\
+    Template: user profile
+\*------------------------------------*/
+.user-profile
+  .this__header
+    @extend .ui-island
+    padding: 0
+    margin-bottom: 20px
+    jLine stretch
+
+  .this__header__left
+    width: 690px
+    padding: 10px 0
+
+  .this__header__right
+    width: 270px
+    border-left: 1px solid #d5d5d5
+    .flexbox &
+      display flex
+      justify-content flex-end
+      align-items center
+    .no-flexbox &
+      hLine(middle)
+      text-align: center
+      padding-top: 25px
+    .button:last-child
+      margin-left: 12px
+    .button
+      width: 120px
+
+  .this__title
+    color: #333
+    font-size: 24px
+    line-height: 1.2
+    margin-bottom: 5px
+    font-weight: bold
+
+  .this__header__info
+    hLine()
+    font-size: 18px
+    &>*
+      margin-right: 25px
+      &:last-child
+        margin-right: 0
+
+  .this__email
+    &:before
+      pi(baseline)
+      width: 16px
+      height: 12px
+      img('icon-mail.png')
+      margin-right: 5px
+
+
+  .this__tel
+    &:before
+      pi(baseline)
+      margin-bottom: -1px
+      width: 11px
+      height: 16px
+      img('icon-tel.png')
+      margin-right: 5px
+
+  .this__main
+    .flexbox &
+      display flex
+      justify-content space-between
+      align-content stretch
+
+  .this__main__photo
+    width: 350px
+    img
+      display: block
+      size 100% auto
+
+  .this__main__info
+    width: 565px
+    .flexbox &
+      display flex
+      flex-direction column
+      justify-content space-between
+    p
+      font-size: 13px
+
+  .this__otherPhotosList
+    margin-top: 15px
+    border-top: 1px solid #d5d5d5
+    li
+      width: 125px
+
+    img
+      display: block
+      width: 100%
+      height: auto
+      &:hover
+        box-shadow: 0 0 0 2px #fff, 0 0 0 3px #babcbb
+
+  .this__otherPhotosList__title
+    color: #333
+    font-size: 24px
+    margin: 10px 0
+    font-weight: 400
+    a
+      color: $secondary-color
+
+
+  .this__info
+    jLine(top)
+    border-top: 1px solid #d5d5d5
+    margin-top: 20px
+    color: #656565
+    dl
+      font-size: 13px
+    dt
+      color: #999
+      width: 125px
+      float: left
+      font-weight: 400
+      margin-bottom: 10px
+
+    dd
+      border-bottom: 1px solid #d5d5d5
+      margin-bottom: 10px
+      &:last-of-type
+        border-bottom none
+
+  .this__info__lt
+    width: 355px
+
+  .this__info__rt
+    width: 565px
+
+  .this__info__section
+    border-bottom 1px solid #d5d5d5
+    &:last-child
+      border-bottom none
+
+  .this__info__section__title
+    color: #333
+    font-size: 22px
+    line-height: 1.2
+    margin: 20px 0 10px
+
+
+
+/*------------------------------------*\
+  Template: Payment
+\*------------------------------------*/
+.payment-view
+  font-size: 13px
+  border-top: 1px solid #d5d5d5
+  padding-top: 10px
+
+  .button
+    display block
+    margin-top: 20px
+    width: 235px
+
+  .this__section
+    margin-bottom: 50px
+
+  .this__title
+    font-size: 30px;
+    margin-bottom: 0px
+
+  .this__subTitle
+    font-size: 22px
+    padding-bottom: 5px
+    border-bottom 1px solid #d5d5d5
+
+  .this__billingAddress
+    hLine(top)
+    margin-left: -10px
+    margin-top: 10px
+    label
+      width: 235px
+      margin-left: 9px
+      margin-bottom: 10px
+      span
+        text-transform: capitalize
+
+    .button
+      display block
+      margin-left: 9px
+
+  .this__tabs__nav
+    width: 160px
+    float left
+    position relative
+    a
+      position relative
+      display block
+      padding: 10px
+      background-color #f8f8f8
+      border-bottom 1px solid #d5d5d5
+      font-size: 14px
+      color: #656565
+      img('tab-nav-arrow.png','110px 50%')
+      &:hover,&:focus,&.is-active
+        color $primary-color
+        background-image data('tab-nav-arrow-active.png')
+      &.is-active
+        background-color #fff
+        z-index: 1
+
+  .this__tabs
+    width: 820px
+    position relative
+    left -1px
+    float right
+    border #d5d5d5
+    border-top: none
+    border-bottom: none
+    padding: 20px 20px 20px 80px
+
+  .this__options--creditCard
+    img('credit-card-types-about.png','100% 0')
+
+    label
+      width: 320px
+      margin: 10px 0
+
+  .this__options--creditCard__types
+    position relative
+    //image
+    &:before
+      pb(left 100% bottom 5px)
+      img('credit-card-types.png')
+      size 137px 25px
+      margin-left: 5px
+
+  .this__options--creditCard__cvv
+    width: auto !important
+    input
+      width: 70px
+
+  .this__options--creditCard__cvv__description
+    margin-left: 12px
+    padding-left: 55px
+    line-height 35px
+    img('credit-card-cvv.png','0 50%')
+
+  .this__options--creditCard__agreement
+    width: auto !important
+    hLine(middle)
+
+
+/*------------------------------------*\
+  Template: Edit profile
+\*------------------------------------*/
+.edit-profile-view
+  padding-top: 10px
+  border-top: 1px solid #d5d5d5
+
+  .this__section
+    margin-bottom: 25px
+    border-bottom 1px solid #d5d5d5
+
+    &.is-active
+      border-bottom none
+
+      .this__section__header
+        border-bottom 1px solid #d5d5d5
+        &:before
+          img('icon-minus.png')
+          size 13px 1px
+          margin-top: 0
+
+      .this__section__main
+        display block
+
+
+  .this__section__header
+    position relative
+    font-size: 22px
+    color: #333
+    padding: 3px 0
+    //icon
+    &:before
+      pb(top 50% right 10px)
+      margin-top: -6px
+      size 13px
+      img('icon-plus.png')
+
+  .this__section__main
+    display none
+    margin: 20px 0
+    border #d5d5d5
+    padding: 10px
+    color: #656565;
+    font-size: 13px;
+
+
+
+/*------------------------------------*\
+  Template: Collection
+\*------------------------------------*/
+.collection-view
+  @extend .search-results
+  container()
+
+
+
+/*------------------------------------*\
+  Template: Conversations
+\*------------------------------------*/
+.conversations-view
+  clearfix()
+
+  .this__conversaton--current
+    float: left
+    width: 330px
+
+    .person-view
+      padding: 20px
+      border-bottom: 1px solid #d5d5d5
+      hLine middle
+      ellipsis()
+      cursor: pointer
+      &.is-selected
+        background-color #f5f5f5
+
+      &.is-active
+        border: 1px solid #333
+        background-color #666
+        color: #fff !important
+
+      .this__photo
+        size 45px
+        margin-right: 10px
+
+      .this__title
+        font-weight 700
+        color: #333
+        margin-bottom: 5px
+
+      .this__message
+        width: 200px
+        ellipsis()
+
+
+  .this__conversation--active
+    border-left 1px solid #d5d5d5
+    float right
+    width: 650px
+    min-height 850px
+    position relative
+    padding-bottom: 200px
+
+    .person-view
+      padding: 20px
+      jLine top
+
+      .this__main
+        width: 555px
+
+      .this__photo
+        size 45px
+
+      header
+        margin-bottom: 5px
+
+      time
+        font-size: 11px
+        color: #333
+
+      .this__title
+        font-weight 700
+        color: #333
+
+
+
+
+  .this__writeReply
+    absolute bottom left
+    size 100% auto
+    padding: 15px 20px
+    background-color: #f5f5f5
+
+    textarea
+      min-height 65px
+      height: 65px
+      width: 100%
+
+  .this__writeReply__buttonWrap
+    padding: 5px
+    text-align: right
+    hLine()
+    background-color #fff
+    border #b6b8b7
+    border-top: none
+
+
+/*------------------------------------*\
+  Template: user profile
+\*------------------------------------*/
+
+/*------------------------------------*\
+  Template: user profile
+\*------------------------------------*/
+
+/*------------------------------------*\
+  Template: user profile
+\*------------------------------------*/
+
+
+
+
+/*------------------------------------*\
+    Custom selectbox
+\*------------------------------------*/
+select
+  display: none
+
+.customSelect
+  display: inline-block
+  position: relative
+  font-size: 11px
+  margin: 0
+
+.customSelect .selectedValue 
+  padding: 5px 15px 5px 5px
+  width: inherit
+  display: block
+  white-space: nowrap
+  overflow: hidden
+  text-overflow: ellipsis
+  margin-bottom: 0
+  line-height: 1.2
+  color: #333333
+  cursor: pointer
+  background-color: #d5d5d5
+  border-radius: 2px
+
+.customSelect .selectList 
+  z-index: 100
+  position: absolute
+  left: -999em
+  top: -999em
+  margin: 0
+  padding: 0
+  list-style: none
+  background-color: #d5d5d5
+
+
+.customSelect.select-open .selectList 
+  left: 0 !important
+  top: auto !important
+
+.customSelect .selectList dl 
+  background: #fff
+
+.customSelect .selectList dl.defaultScrollbar 
+  overflow-x: hidden
+  overflow-y: scroll
+
+.customSelect dl, .customSelect dd 
+  margin: 0
+
+.customSelect dd 
+  zoom: 1
+  cursor: pointer
+
+.customSelect .selected,
+.customSelect .selectList dd.hovered 
+  text-decoration: none
+  background-color: #333
+  border-top-color: #666
+  border-bottom-color: #666
+  color: #fff
+
+.customSelect dt 
+  font-weight: bold
+  font-style: italic
+  padding: 2px 10px 2px 6px
+
+.customSelect dd 
+  padding: 2px 10px 2px 8px
+  font-size: 11px
+  border-top: 1px solid transparent
+  border-bottom: 1px solid #666
+  background-color: #d5d5d5
+
+.hasJS select.custom 
+  position: absolute
+  left: -999em
+
+.customSelect.focused .selectedValue 
+  box-shadow: 0 0 2px #00aedb
+
+.customSelect.disabled .selectedValue 
+  border: 1px solid #ccc
+  color: #ccc
+  cursor: default
+
+.customSelect .caret 
+  position: absolute
+  top: 50%
+  right: 2px
+  margin-top: -5px
+  cursor: pointer
+  img('select-arrow.png')
+  width: 15px
+  height: 8px
+  transform: scale(.75)
+
+
+.customSelect.select-open .caret 
+  img('select-arrow-reversed.png')
+
+.customSelect .jspPane 
+  overflow-x: hidden
+
+.customSelect .jspVerticalBar 
+  background: none
+  width: 8px
+
+.customSelect .jspHorizontalBar 
+  height: 0
+  overflow: hidden
+
+.customSelect .jspTrack 
+  background: none
+  width: 4px
+  margin: 4px 0
+
+.customSelect .jspDrag 
+  background-color: rgba(247,247,247,.85)
+
+/*
+ * CSS Styles that are needed by jScrollPane for it to operate correctly.
+ *
+ * Include this stylesheet in your site or copy and paste the styles below into your stylesheet - jScrollPane
+ * may not operate correctly without them.
+ */
+.jspContainer
+  overflow: hidden
+  position: relative
+
+
+.jspPane
+  position: absolute
+
+
+.jspVerticalBar
+
+  position: absolute
+  top: 0
+  right: 0
+  width: 8px
+  height: 100%
+  background: transparent
+
+
+.jspHorizontalBar
+  position: absolute
+  bottom: 0
+  left: 0
+  width: 100%
+  height: 8px
+  background: transparent
+
+
+.jspVerticalBar *,
+.jspHorizontalBar *
+  margin: 0
+  padding: 0
+
+
+.jspCap
+  display: none
+
+
+.jspHorizontalBar .jspCap
+  float: left
+
+
+.jspTrack
+  background: transparent
+  width: 4px
+  margin: 4px 0
+  position: relative
+
+
+.jspDrag
+  border-radius: 2px / 3px
+  background-color: #b2b2b2
+  position: relative
+  top: 0
+  left: 0
+  cursor: pointer
+
+
+.jspHorizontalBar .jspTrack,
+.jspHorizontalBar .jspDrag
+  float: left
+  height: 100%
+
+
+.jspArrow
+  background: #50506d
+  text-indent: -20000px
+  display: block
+  cursor: pointer
+
+
+.jspArrow.jspDisabled
+  cursor: default
+  background: #80808d
+
+
+.jspVerticalBar .jspArrow
+  height: 16px
+
+
+.jspHorizontalBar .jspArrow
+  width: 16px
+  float: left
+  height: 100%
+
+
+.jspVerticalBar .jspArrow:focus
+  outline: none
+
+
+.jspCorner
+  background: #eeeef4
+  float: left
+  height: 100%
+
+/*	--------------------------------------------------
+	Reveal Modals
+	-------------------------------------------------- */
+
+.reveal-modal-bg
+  display: none
+  fixed top left
+  size 100%
+  z-index: 100
+  background: #000
+  background: rgba(0,0,0,.5)
+
+
+.reveal-modal 
+  visibility: hidden
+  absolute (top 100px left 50%)
+  z-index: 101
+  modal-width 980px
+  padding: 45px 20px
+  border-radius 10px
+  background-color #fff
+
+  .this__title
+    color: #333;
+    font-size: 22px;
+    margin-bottom: 10px
+
+  .this__footer
+    hLine()
+    text-align: right
+    margin-top: 30px
+
+  .button
+    width: 100px
+
+.close-reveal-modal 
+  absolute(top 17px right 20px)
+  cursor: pointer
+  size 11px
+  img('modal-close.png')
+
+
+.send-message-modal
+  modal-width 620px
+/*	--------------------------------------------------
+	Custom range input
+	-------------------------------------------------- */
+.input-range
+  size 18px 15px
+  placeholder #333
+  font-size: 9px
+  text-align: center
+  border-radius 1px
+  border #666
+  padding: 0
+  position relative
+  &:before
+    pb(top 100% left 50%)
+    img('range-input-corner.png')
+    size 5px 7px
+    margin-left: -2px
+
+.input-range-slider
+  size 100% 1px
+  background-color: #666
+  position relative
+  top 2px
+
+.input-range-progress
+  background-color #2f80e4
+  height: 2px
+  margin-top: -1px
+
+.input-range-handle
+  display block
+  position absolute
+  size 8px
+  background-color #2f80e4
+  border-radius 50%

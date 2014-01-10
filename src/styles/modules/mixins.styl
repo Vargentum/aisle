@@ -1,0 +1,96 @@
+/*------------------------------------*\
+   Pseudo-elements
+\*------------------------------------*/
+pb()
+  content: '';
+  display: block;
+  absolute: arguments
+
+pi($align = auto)
+  content: '';
+  display: inline-block;
+  vertical-align $align
+
+
+/*------------------------------------*\
+  Quick image insert
+\*------------------------------------*/
+img($imgName, $imgPos = '50% 50%', $imgRepeat = no-repeat)
+  background-image data($imgName)
+  background-repeat $imgRepeat
+  background-position unquote($imgPos)
+
+
+/*------------------------------------*\
+  Colors for states(hover, focus, etc)
+\*------------------------------------*/
+c1($lmc-1 = $linkColor)
+  &,&:hover,&:focus,&:active,&:visited
+    color $lmc-1
+
+c2($lmc-1 = $linkColor, $lmc-2 = $hoverLinkColor)
+  &,&:active,&:visited
+    color: $lmc-1
+  &:hover,&:focus
+    color: $lmc-2
+
+placeholder($color){
+  ::-webkit-input-placeholder {color: $color}
+  :-moz-placeholder           {color: $color}
+  ::-moz-placeholder          {color: $color}
+  :-ms-input-placeholder      {color: $color}
+}
+
+
+title($size, $color = $brandColor)
+  font $size $brandFamily
+  color: $color
+
+
+modal-width($width)
+  width: $width
+  margin-left: -($width /2)
+/*------------------------------------*\
+    Layout helpers
+\*------------------------------------*/
+hLine($alignItems = baseline)
+  &>*
+    display: inline-block;
+    vertical-align: $alignItems
+
+
+
+
+jLine($vAlign = baseline)
+  .flexbox &
+    display flex
+    justify-content space-between
+    align-items $vAlign
+    if $vAlign == top
+      align-items flex-start
+    if $vAlign == bottom
+      align-items flex-end
+    if $vAlign == middle
+      align-items center
+  .no-flexbox &
+    hLine $vAlign
+    if $vAlign == fill
+      hLine middle
+    text-align: justify
+    text-justify: newspaper
+    zoom: 1
+    text-align-last: justify
+    &:after
+      pi()
+      height: 0
+      overflow: hidden
+      visibility: hidden
+      width: 100%
+    &>*
+      text-align: left
+
+container($w = $baseMaxWidth)
+  max-width: $w
+  min-width $baseMinWidth
+  margin-left: auto
+  margin-right: auto

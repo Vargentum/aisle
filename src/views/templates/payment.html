@@ -1,0 +1,104 @@
+<div class="payment-view">
+  <section class="this__section">
+    <h1 class="this__title">Payment</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere fugit maxime odit possimus qui rem vero. Ab animi cumque, esse expedita inventore ipsum officia pariatur qui quos vero voluptatem!</p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere fugit maxime odit possimus qui rem vero. Ab animi cumque, esse expedita inventore ipsum officia pariatur qui quos vero voluptatem!</p>
+  </section>
+  <section class="this__section">
+    <h2 class="this__subTitle">Billing Address</h2>
+    <div class="this__billingAddress">
+      <label>
+        <span>Name</span>
+        <input type="text"/>
+      </label>
+      <label>
+        <span>Telephone</span>
+        <input type="text"/>
+      </label>
+      <label>
+        <span>Mobile number</span>
+        <input type="tel"/>
+      </label>
+      <label>
+        <span>Email address</span>
+        <input type="email"/>
+      </label>
+      <label style="width: 485px">
+        <span>Billing address</span>
+        <input type="text"/>
+      </label>
+      <label>
+        <span>City</span>
+        <input type="text"/>
+      </label>
+      <label>
+        <span>State/Province</span>
+        <input type="text"/>
+      </label>
+      <label>
+        <span>Zip code</span>
+        <input type="text"/>
+      </label>
+      <label>
+        <span>Country</span>
+        <select>
+          <option value="">Item 1</option>
+          <option value="">Item 2</option>
+          <option value="">Item 100500</option>
+        </select>
+      </label>
+      <button type="submit" class="button  primary">Proceed</button>
+    </div>
+  </section>
+  <section class="this__section">
+    <h3 class="this__subTitle">Payment Options</h3>
+    <ul class="this__tabs__nav  js-tabs">
+      <li><a class="is-active" href="#">Credit Card</a></li>
+      <li><a href="#">Debit Card</a></li>
+      <li><a href="#">Net Banking</a></li>
+      <li><a href="#">PayPal</a></li>
+    </ul>
+    <ul class="this__tabs">
+      <li class="this__tabs__unit">
+        <!--creditCard options-->
+        <div class="this__options--creditCard">
+          <h3><b>Enter your credit card details</b></h3>
+
+          <label class="this__options--creditCard__types">
+            <span>Credit card no.</span>
+            <input type="text"/>
+          </label>
+          <label>
+            <span>Expiry date</span>
+            <select class="this__options--creditCard__select">
+              <option value="">Item 1</option>
+              <option value="">Item 2</option>
+              <option value="">Item 100500</option>
+            </select>
+            <select class="this__options--creditCard__select">
+              <option value="">Item 1</option>
+              <option value="">Item 2</option>
+              <option value="">Item 100500</option>
+            </select>
+          </label>
+          <label>
+            <span>Card holder</span>
+            <input type="text" placeholder="Name as on card"/>
+          </label>
+          <label class="this__options--creditCard__cvv">
+            <span></span>
+            <div class="l-hLine--middle">
+              <input type="text"/>
+              <span class="this__options--creditCard__cvv__description">The 3 digit number printed on the back of the card</span>
+            </div>
+          </label>
+          <label class="this__options--creditCard__agreement">
+            <input type="checkbox"/>
+            <span>I understand and agree to the rules and restrictions of this fare, the Booking Policy and the Terms & Conditions of Aisle.</span>
+          </label>
+          <button type="submit" class="button primary">Make Payment</button>
+        </div>
+      </li>
+    </ul>
+  </section>
+</div>
