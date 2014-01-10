@@ -1,6 +1,4 @@
-# Foundation libsass template
-
-This is a template to start your own project that uses Grunt and libsass!
+﻿# Grunt powered project
 
 ## Requirements
 
@@ -8,22 +6,30 @@ You'll need to have the following items installed before continuing.
 
   * [Node.js](http://nodejs.org): Use the installer provided on the NodeJS website.
   * [Grunt](http://gruntjs.com/): Run `[sudo] npm install -g grunt-cli`
-  * [Bower](http://bower.io): Run `[sudo] npm install -g bower`
 
 ## Quickstart
 
 ```bash
-git clone git@github.com:zurb/foundation-libsass-template.git
-npm install && bower install
+git clone git@github.com:Vargentum/aisle.git
+npm install
 ```
 
-While you're working on your project, run:
+To simply build project run
 
 `grunt`
 
-And you're set!
+To deploy development server run
+
+`grunt server`
+
 
 ## Directory Strucutre
 
-  * `scss/_settings.scss`: Foundation configuration settings go in here
-  * `scss/app.scss`: Application styles go here
+  * `src/`: Project sources.
+  * `src/styles`: Project styles powered with Stylus. If you don't know stylus - simply write CSS rules in stylus files!
+  * `src/views`: Project views. Simply comment/uncomment strings to disable/enable views.
+  * `src/scripts/`: Project scripts. Simply paste any plugins in plugins/ folder, and initialize them in core.coffee
+
+  * `app/`: Project compilation: front-end stack. Important: Don't write any code here!!!
+
+
