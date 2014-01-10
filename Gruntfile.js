@@ -161,7 +161,6 @@ module.exports = function (grunt) {
     }
   });
 
-  
 
   grunt.registerTask('compile-css', [
     'stylus',
@@ -191,5 +190,4 @@ module.exports = function (grunt) {
     'open',
     'watch'
   ]);
-
 };

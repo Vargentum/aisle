@@ -1,11 +1,5 @@
-# FireShell
-# http://getfireshell.com
-# @author Todd Motto
-
-node_modules
-.DS_Store
-.tmp
-.sass-cache
+*.DS_Store
 .idea
-.sass-cache
-package.json
+/bower_components/*
+/node_modules/*
+/temp/*
