@@ -12,7 +12,7 @@ $ ->
 
 $ ->
   $(":range").rangeinput(
-    progress: true
+    progress: true,
     css:
       input: 'input-range',
       slider: 'input-range-slider',
