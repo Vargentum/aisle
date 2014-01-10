@@ -31,5 +31,3 @@ To deploy development server run
   * `src/scripts/`: Project scripts. Simply paste any plugins in plugins/ folder, and initialize them in core.coffee
 
   * `app/`: Project compilation: front-end stack. Important: Don't write any code here!!!
-
-
