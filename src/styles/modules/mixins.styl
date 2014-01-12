@@ -59,8 +59,6 @@ hLine($alignItems = baseline)
     vertical-align: $alignItems
 
 
-
-
 jLine($vAlign = baseline)
   .flexbox &
     display flex
@@ -77,6 +75,8 @@ jLine($vAlign = baseline)
     if $vAlign == fill
       hLine middle
     text-align: justify
+    font-size: 1px
+    line-height: 0
     text-justify: newspaper
     zoom: 1
     text-align-last: justify
@@ -88,6 +88,8 @@ jLine($vAlign = baseline)
       width: 100%
     &>*
       text-align: left
+      font-size: $baseFontSize
+      line-height: $baseLineHeight
 
 container($w = $baseMaxWidth)
   max-width: $w

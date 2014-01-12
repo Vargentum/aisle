@@ -173,6 +173,10 @@ hr
   font-size: 30px
   color: #333333
 
+.ui-subTitle
+  font-size: 22px
+  color: #333;
+
 .connectBtn--linkedin
   size 200px 32px
   img('connect-to-linkedin.png')
@@ -767,7 +771,8 @@ select
     .no-flexbox &
       hLine(middle)
       text-align: center
-      padding-top: 25px
+      padding-top: 15px
+
     .button:last-child
       margin-left: 12px
     .button
@@ -812,8 +817,13 @@ select
       justify-content space-between
       align-content stretch
 
+    .no-flexbox &
+      clearfix()
+
   .this__main__photo
     width: 350px
+    .no-flexbox &
+      float left
     img
       display: block
       size 100% auto
@@ -824,6 +834,8 @@ select
       display flex
       flex-direction column
       justify-content space-between
+    .no-flexbox &
+      float right
     p
       font-size: 13px
 
@@ -903,14 +915,14 @@ select
 
 .pay-plane
   margin-top: 20px
-  width: 195px
+  width: 193px
   padding: 30px
   text-align: center
   transition .4s background-color
   .this__invites
     margin-bottom: 20px
     size 135px
-    border-radus 50%
+    border-radius 50%
     background-color #00bff3
     color: #fff
     font-size: 22px
@@ -922,6 +934,11 @@ select
       justify-content center
       align-items center
       flex-direction column
+
+    .no-flexbox &
+      text-align: center;
+      padding-top: 28px
+
 
   .this__invites__counter
     font-size: 50px
@@ -1208,13 +1225,7 @@ select
   .payment-view
     padding: 0
 
-  
-.pay-plane
-  width: 190px
-  padding: 30px
-  .this__invites
-    size 135px
-    border-radius 50%
+
 /*------------------------------------*\
   Template: Collection
 \*------------------------------------*/
@@ -1660,3 +1671,12 @@ select
   size 8px
   background-color #2f80e4
   border-radius 50%
+
+
+/*Switch Fixed header to static on small screens*/
+@media only screen and (max-width: 980px)
+  body
+    padding-top: 0
+  .l-header
+    position static
+    margin-left: 0
