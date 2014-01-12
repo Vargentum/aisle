@@ -1,11 +1,20 @@
 'use strict'
 
 $ ->
-  $('select').each ->
+  $('.edit-profile-view select, .search-results select').each ->
+    sb = new SelectBox
+      selectbox: $(this)
+      height: 245,
+      width: 235
+
+$ ->
+  $('.search-settings select').each ->
     sb = new SelectBox
       selectbox: $(this)
       height: 245,
       width: 100
+
+
 
 $ ->
   $('.js-scrollbar').jScrollPane()

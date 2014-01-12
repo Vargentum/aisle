@@ -1,7 +1,18 @@
 (function() {
   'use strict';
   $(function() {
-    return $('select').each(function() {
+    return $('.edit-profile-view select, .search-results select').each(function() {
+      var sb;
+      return sb = new SelectBox({
+        selectbox: $(this),
+        height: 245,
+        width: 235
+      });
+    });
+  });
+
+  $(function() {
+    return $('.search-settings select').each(function() {
       var sb;
       return sb = new SelectBox({
         selectbox: $(this),

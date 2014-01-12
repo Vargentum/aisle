@@ -14,6 +14,9 @@ for $type in text password datetime datetime-local date month time week number e
     border-radius: 2px
     padding: 0 10px
     placeholder #b5b7b7
+    &:invalid
+      border-color $secondary-color !important
+      color $secondary-color !important
     label &
       width: 100%
 
@@ -62,8 +65,10 @@ a
 
 body
   background-color: $bodyColor
+  padding-top: 140px
 
-
+figure
+  reset-box-model()
 /*------------------------------------*\
     Custom UI elements
 \*------------------------------------*/
@@ -142,21 +147,57 @@ hr
   background-color: #d5d5d5
 
 
+.ui-formWrapper
+  hLine(top)
+  margin-left: -10px
+  margin-top: 10px
+  label
+    width: 235px
+    margin-left: 9px
+    margin-bottom: 10px
+    span
+      text-transform: capitalize
+
+  .button
+    display block
+    margin-left: 9px
 
 
 
+.ui-columnize-2
+  column-count 2
+  column-gap 15px
 
+
+.ui-title
+  font-size: 30px
+  color: #333333
+
+.connectBtn--linkedin
+  size 200px 32px
+  img('connect-to-linkedin.png')
+  hide-text()
+
+.connectBtn--facebook
+  size 210px 32px
+  img('connect-to-facebook.png')
+  hide-text()
 
 
 /*------------------------------------*\
     HEADER
 \*------------------------------------*/
 .l-header
-  position: relative
+  background-color #fff
+  fixed left 50% top 0
+  width: $baseMaxWidth +1px
+  min-width: @width
+  margin-left: -(($baseMaxWidth + 2px) /2)
+  z-index: 200
   padding-bottom: 20px
+  border-bottom 1px solid #d8d8d8
 
 .l-header__row
-  container()
   jLine middle
   padding: 20px 0 0
 
@@ -259,12 +300,18 @@ hr
   
 
   .this__userMenu
+    padding-right: 0
     border-right: none
     a
       c1(#333)
     &.is-active:after
        img('select-arrow-reversed.png')
-    
+
+    &:hover
+      .this__dropdown
+        left auto
+        right: 0
+
     .this__dropdown__notification
       width: 150px
       &:last-child
@@ -904,8 +951,14 @@ select
 \*------------------------------------*/
 .payment-view
   font-size: 13px
-  border-top: 1px solid #d5d5d5
   padding-top: 10px
+
+  .this__section__header
+    position relative
+    font-size: 22px
+    color: #333
+    padding: 3px 0
+    border-bottom 1px solid #d5d5d5
 
   .button
     display block
@@ -923,21 +976,6 @@ select
     font-size: 22px
     padding-bottom: 5px
     border-bottom 1px solid #d5d5d5
-
-  .this__billingAddress
-    hLine(top)
-    margin-left: -10px
-    margin-top: 10px
-    label
-      width: 235px
-      margin-left: 9px
-      margin-bottom: 10px
-      span
-        text-transform: capitalize
-
-    .button
-      display block
-      margin-left: 9px
 
   .this__tabs__nav
     width: 160px
@@ -1000,13 +1038,23 @@ select
     width: auto !important
     hLine(middle)
 
+  .this__options--creditCard__expiryDate
+    width: 315px
+    jLine()
 
 /*------------------------------------*\
   Template: Edit profile
 \*------------------------------------*/
+
 .edit-profile-view
   padding-top: 10px
-  border-top: 1px solid #d5d5d5
+  .ui-title
+    max-width: 530px
+
+  .this__incorrectFormAlert
+    color: $secondary-color;
+    font-weight 700
+    margin-top: 15px
 
   .this__section
     margin-bottom: 25px
@@ -1041,12 +1089,126 @@ select
   .this__section__main
     display none
     margin: 20px 0
-    border #d5d5d5
-    padding: 10px
     color: #656565;
     font-size: 13px;
 
 
+  .this__aboutMe
+    size 100% 100px
+    font-size: 13px
+    color: #656565
+
+  .this__birth--day
+    width: 45px
+    margin-right: 5px
+
+  .this__birth--month
+    width: 100px
+    margin-right: 5px
+
+  .this__birth--year
+    width: 75px
+
+  .this__photoWrapper
+    container()
+    margin-left: 9px
+
+  .this__photo
+    position relative
+    margin-top: 5px
+    size 235px
+    background-color #f7f7f7
+    border #f7f7f7
+    img('photo-upload.png')
+    transition all .4s
+    cursor pointer
+    &:hover
+      border-color #2f80e4
+      img('photo-upload-active.png')
+
+    img
+      size 100%
+      display block
+
+    [type=file]
+      absolute(top left)
+      size 100%
+      display block
+      opacity 0
+
+    &.is-uploaded
+      &,&:hover
+        border none
+        cursor default
+      [type=file]
+        display none
+      &:hover .this__photo__delete
+        display block
+
+  .this__photo__delete
+    display none
+    size 16px
+    border-radius 2px
+    background-color #333
+    img('photo-delete.png')
+    absolute(top 6px right 6px)
+    &:hover span
+      display block
+    span
+      display none
+      absolute(bottom 100% left 50%)
+      margin-left: -22px;
+      margin-bottom: 5px
+      color #ddd
+      font-size 11px
+      font-weight bold
+      background-color #333
+      border-radius 2px
+      padding: 1px 3px
+      //corner
+      &:before
+        pb(top 100% left 50%)
+        border-top   3px solid #333
+        border-left  4px solid transparent
+        border-right 4px solid transparent
+        margin-left: -3px
+
+
+  .this__interests
+    hLine(bottom)
+    dt
+      width: 100px
+      float none
+      margin-bottom: 15px
+    dd
+      width: 377px
+      position relative
+      top -10px
+      margin-bottom: 15px
+
+
+
+  .this__preferences
+    display block
+    hLine()
+    margin-bottom: 10px
+    &:last-child
+      margin-bottom: 0
+
+  .this__preferences__variant-1
+    hLine()
+    width: 170px
+
+  .this__preferences__variant-2
+    hLine()
+    margin-left: 65px
+    width: 215px
+
+
+  .payment-view
+    padding: 0
+
+  
 .pay-plane
   width: 190px
   padding: 30px
@@ -1182,18 +1344,25 @@ select
   margin: 0
 
 .customSelect .selectedValue 
-  padding: 5px 15px 5px 5px
+  padding: 8px 15px 8px 5px
   width: inherit
   display: block
   white-space: nowrap
   overflow: hidden
   text-overflow: ellipsis
   margin-bottom: 0
-  line-height: 1.2
+  font-size: 13px;
+  line-height: 14px
   color: #333333
   cursor: pointer
-  background-color: #d5d5d5
   border-radius: 2px
+  border #b6b8b7
+  .search-settings &
+    padding-top: 3px
+    padding-bottom: 3px
+    font-size: 11px
+    border none
+    background-color: #d5d5d5
 
 .customSelect .selectList 
   z-index: 100
@@ -1203,7 +1372,11 @@ select
   margin: 0
   padding: 0
   list-style: none
-  background-color: #d5d5d5
+  border #b6b8b7
+  border-top: none
+  .search-settings &
+    border none
+    background-color: #d5d5d5
 
 
 .customSelect.select-open .selectList 
@@ -1227,29 +1400,32 @@ select
 .customSelect .selected,
 .customSelect .selectList dd.hovered 
   text-decoration: none
-  background-color: #333
-  border-top-color: #666
-  border-bottom-color: #666
-  color: #fff
+  background-color: #d5d5d5
+  .search-settings &
+    background-color: #333
+    color: #fff
 
-.customSelect dt 
+.customSelect dt
   font-weight: bold
   font-style: italic
   padding: 2px 10px 2px 6px
 
 .customSelect dd 
-  padding: 2px 10px 2px 8px
+  padding: 5px 10px 5px 8px
   font-size: 11px
   border-top: 1px solid transparent
-  border-bottom: 1px solid #666
-  background-color: #d5d5d5
+  border-bottom: 1px solid #b6b8b7
+  background-color: #f8f8f8
+  &:first-of-type
+    border-top: none
+  &:last-of-type
+    border-bottom: none
+  .search-settings &
+    background-color: #d5d5d5
 
 .hasJS select.custom 
   position: absolute
   left: -999em
-
-.customSelect.focused .selectedValue 
-  box-shadow: 0 0 2px #00aedb
 
 .customSelect.disabled .selectedValue 
   border: 1px solid #ccc
@@ -1288,8 +1464,9 @@ select
   margin: 4px 0
 
 .customSelect .jspDrag 
-  background-color: rgba(247,247,247,.85)
-
+  background-color #505050
+  .search-settings &
+    background-color: rgba(247,247,247,.85)
 /*
  * CSS Styles that are needed by jScrollPane for it to operate correctly.
  *
@@ -1399,7 +1576,7 @@ select
   display: none
   fixed top left
   size 100%
-  z-index: 100
+  z-index: 300
   background: #000
   background: rgba(0,0,0,.5)
 
@@ -1407,7 +1584,7 @@ select
 .reveal-modal 
   visibility: hidden
   absolute (top 100px left 50%)
-  z-index: 101
+  z-index: 301
   modal-width 620px
   padding: 45px 20px
   border-radius 10px
