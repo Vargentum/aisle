@@ -179,58 +179,60 @@
   <!--include "templates/search"-->
   <div class="payment-view">
     <section class="this__section">
-      <h1 class="this__title">Payment</h1>
+      <h1 class="ui-title">Payment</h1>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere fugit maxime odit possimus qui rem vero. Ab animi cumque, esse expedita inventore ipsum officia pariatur qui quos vero voluptatem!</p>
       <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere fugit maxime odit possimus qui rem vero. Ab animi cumque, esse expedita inventore ipsum officia pariatur qui quos vero voluptatem!</p>
     </section>
     <section class="this__section">
-      <h2 class="this__subTitle">Billing Address</h2>
-      <div class="this__billingAddress">
-        <label>
-          <span>Name</span>
-          <input type="text"/>
-        </label>
-        <label>
-          <span>Telephone</span>
-          <input type="text"/>
-        </label>
-        <label>
-          <span>Mobile number</span>
-          <input type="tel"/>
-        </label>
-        <label>
-          <span>Email address</span>
-          <input type="email"/>
-        </label>
-        <label style="width: 485px">
-          <span>Billing address</span>
-          <input type="text"/>
-        </label>
-        <label>
-          <span>City</span>
-          <input type="text"/>
-        </label>
-        <label>
-          <span>State/Province</span>
-          <input type="text"/>
-        </label>
-        <label>
-          <span>Zip code</span>
-          <input type="text"/>
-        </label>
-        <label>
-          <span>Country</span>
-          <select>
-            <option value="">Item 1</option>
-            <option value="">Item 2</option>
-            <option value="">Item 100500</option>
-          </select>
-        </label>
-        <button type="submit" class="button  primary">Proceed</button>
+      <h2 class="this__section__header">Billing Address</h2>
+      <div class="this__section__main">
+        <div class="ui-formWrapper">
+          <label>
+            <span>Name</span>
+            <input type="text"/>
+          </label>
+          <label>
+            <span>Telephone</span>
+            <input type="text"/>
+          </label>
+          <label>
+            <span>Mobile number</span>
+            <input type="tel"/>
+          </label>
+          <label>
+            <span>Email address</span>
+            <input type="email"/>
+          </label>
+          <label style="width: 485px">
+            <span>Billing address</span>
+            <input type="text"/>
+          </label>
+          <label>
+            <span>City</span>
+            <input type="text"/>
+          </label>
+          <label>
+            <span>State/Province</span>
+            <input type="text"/>
+          </label>
+          <label>
+            <span>Zip code</span>
+            <input type="text"/>
+          </label>
+          <label>
+            <span>Country</span>
+            <select>
+              <option value="">Item 1</option>
+              <option value="">Item 2</option>
+              <option value="">Item 100500</option>
+            </select>
+          </label>
+          <button type="submit" class="button  primary">Proceed</button>
+        </div>
       </div>
     </section>
     <section class="this__section">
-      <h3 class="this__subTitle">Payment Options</h3>
+      <h3 class="this__section__header">Payment Options</h3>
       <ul class="this__tabs__nav  js-tabs">
         <li><a class="is-active" href="#">Credit Card</a></li>
         <li><a href="#">Debit Card</a></li>
@@ -249,16 +251,18 @@
             </label>
             <label>
               <span>Expiry date</span>
-              <select class="this__options--creditCard__select">
-                <option value="">Item 1</option>
-                <option value="">Item 2</option>
-                <option value="">Item 100500</option>
-              </select>
-              <select class="this__options--creditCard__select">
-                <option value="">Item 1</option>
-                <option value="">Item 2</option>
-                <option value="">Item 100500</option>
-              </select>
+              <div class="this__options--creditCard__expiryDate">
+                <select>
+                  <option value="">Item 1</option>
+                  <option value="">Item 2</option>
+                  <option value="">Item 100500</option>
+                </select>
+                <select>
+                  <option value="">Item 1</option>
+                  <option value="">Item 2</option>
+                  <option value="">Item 100500</option>
+                </select>
+              </div>
             </label>
             <label>
               <span>Card holder</span>
@@ -282,6 +286,7 @@
     </section>
   </div>
   <!--include "templates/edit-profile"-->
+  <!--include "templates/edit-profile-full"-->
   <!--include "templates/bookmarks"-->
   <!--include "templates/conversations"-->
   <!--include "templates/profile"-->
