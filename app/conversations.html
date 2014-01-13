@@ -30,6 +30,16 @@
             <li class="this__dropdown__notification">
               <div class="left">
                 <img class="this__dropdown__notification__img" src="http://fakeimg.pl/32x32/?text=Hello">
+                <span class="this__dropdown__notification__text"><b>Able</b></span>
+              </div>
+              <div class="right  l-hLine">
+                <button class="button  secondary">Accept</button>
+                <button class="button  primary">Decline</button>
+              </div>
+            </li>
+            <li class="this__dropdown__notification">
+              <div class="left">
+                <img class="this__dropdown__notification__img" src="http://fakeimg.pl/32x32/?text=Hello">
                 <span class="this__dropdown__notification__text"><b>Able</b> just viewed our profile.</span>
               </div>
               <div class="right  l-hLine">
@@ -175,6 +185,17 @@
 <!--MAIN start-->
 <div class="l-main" role="main">
 
+  <!--<ul style="font-size: 20px;">-->
+    <!--<li><a href="invitations.html">Invitations</a></li>-->
+    <!--<li><a href="search.html">search</a></li>-->
+    <!--<li><a href="payment.html">payment</a></li>-->
+    <!--<li><a href="edit-profile.html">edit-profile</a></li>-->
+    <!--<li><a href="edit-profile-full.html">edit-profile-full</a></li>-->
+    <!--<li><a href="bookmarks.html">bookmarks</a></li>-->
+    <!--<li><a href="conversations.html">conversations</a></li>-->
+    <!--<li><a href="profile.html">profile</a></li>-->
+  <!--</ul>-->
+
   <!--include "templates/invitations"-->
   <!--include "templates/search"-->
   <!--include "templates/payment"-->
@@ -184,13 +205,34 @@
   <div class="conversations-view">
 
     <!--all current conversation-->
-    <ul class="this__conversaton--current">
+    <ul class="this__conversaton--all">
       <li>
-        <div class="person-view  is-selected">
+        <div class="person-view  is-unread">
           <img class="this__photo" src="http://fakeimg.pl/45x45/?text=45x45">
           <div>
             <h3 class="this__title">Sarath</h3>
             <div class="this__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consectetur ducimus ea explicabo. Autem, dolores itaque nam nemo nulla vel voluptates? Aliquid fuga illo, maxime quae quos sit voluptas! Fugit.</div>
+            <a href="#" class="this__delete"><span>Delete</span></a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="person-view  is-unread">
+          <img class="this__photo" src="http://fakeimg.pl/45x45/?text=45x45">
+          <div>
+            <h3 class="this__title">Sarath</h3>
+            <div class="this__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consectetur ducimus ea explicabo. Autem, dolores itaque nam nemo nulla vel voluptates? Aliquid fuga illo, maxime quae quos sit voluptas! Fugit.</div>
+            <a href="#" class="this__delete"><span>Delete</span></a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="person-view  is-unread">
+          <img class="this__photo" src="http://fakeimg.pl/45x45/?text=45x45">
+          <div>
+            <h3 class="this__title">Sarath</h3>
+            <div class="this__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consectetur ducimus ea explicabo. Autem, dolores itaque nam nemo nulla vel voluptates? Aliquid fuga illo, maxime quae quos sit voluptas! Fugit.</div>
+            <a href="#" class="this__delete"><span>Delete</span></a>
           </div>
         </div>
       </li>
@@ -200,6 +242,7 @@
           <div>
             <h3 class="this__title">Sarath</h3>
             <div class="this__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consectetur ducimus ea explicabo. Autem, dolores itaque nam nemo nulla vel voluptates? Aliquid fuga illo, maxime quae quos sit voluptas! Fugit.</div>
+            <a href="#" class="this__delete"><span>Delete</span></a>
           </div>
         </div>
       </li>
@@ -209,24 +252,7 @@
           <div>
             <h3 class="this__title">Sarath</h3>
             <div class="this__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consectetur ducimus ea explicabo. Autem, dolores itaque nam nemo nulla vel voluptates? Aliquid fuga illo, maxime quae quos sit voluptas! Fugit.</div>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="person-view">
-          <img class="this__photo" src="http://fakeimg.pl/45x45/?text=45x45">
-          <div>
-            <h3 class="this__title">Sarath</h3>
-            <div class="this__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consectetur ducimus ea explicabo. Autem, dolores itaque nam nemo nulla vel voluptates? Aliquid fuga illo, maxime quae quos sit voluptas! Fugit.</div>
-          </div>
-        </div>
-      </li>
-      <li>
-        <div class="person-view">
-          <img class="this__photo" src="http://fakeimg.pl/45x45/?text=45x45">
-          <div>
-            <h3 class="this__title">Sarath</h3>
-            <div class="this__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consectetur ducimus ea explicabo. Autem, dolores itaque nam nemo nulla vel voluptates? Aliquid fuga illo, maxime quae quos sit voluptas! Fugit.</div>
+            <a href="#" class="this__delete"><span>Delete</span></a>
           </div>
         </div>
       </li>
@@ -236,6 +262,7 @@
           <div>
             <h3 class="this__title">Sarath</h3>
             <div class="this__message">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Architecto consectetur ducimus ea explicabo. Autem, dolores itaque nam nemo nulla vel voluptates? Aliquid fuga illo, maxime quae quos sit voluptas! Fugit.</div>
+            <a href="#" class="this__delete"><span>Delete</span></a>
           </div>
         </div>
       </li>
@@ -312,11 +339,6 @@
     </div>
   </div>
   <!--include "templates/profile"-->
-
-
-
-
-
 
 
 
