@@ -55,9 +55,10 @@ a
     text-decoration: none
   &:focus
     color $focusedLinkColor
-    outline: thin dotted
+    outline: none
   &:active
     color $activeLinkColor
+    outline none
   &:visited
     color $visitedLinkColor
 
@@ -240,18 +241,28 @@ hr
   z-index: 10
   &>li
     position relative
-    padding: 0 15px
-    border-right: 1px solid #d5d5d5
+    padding: 0 15px 7px
+    &:before
+      absolute left top 50%
+      size 1px 10px
+      background-color: #d5d5d5
+      margin-top: -5px
+    &:first-child:before
+      display none
     &:hover
       .this__dropdown
         left auto
         right: 15px
 
-  .this__label--connections,
-  .this__label--messages,
-  .this__label--notifications
-    display block
-    relative bottom 9px left 12px
+  for $i in connections messages notifications
+    .this__label--{$i}
+      display block
+      position relative
+      img('events-'+$i+'.png')
+      size 16px
+
+  .this__label__counter
+    absolute top -9px right -12px
     text-align: center
     font-weight bold
     c1(#fff)
@@ -260,14 +271,6 @@ hr
     line-height: 20px
     background-color $secondary-color
     border-radius: 50%
-    &:before
-      pb(top 9px right 12px)
-      z-index: -1
-      size 16px
-
-  for $i in connections messages notifications
-    .this__label--{$i}:before
-      img('events-'+$i+'.png')
 
   .this__dropdown
     absolute top 100% left -9999px
@@ -280,40 +283,46 @@ hr
       img('dropdown-arrow.png')
       size 12px 7px
 
-  .this__dropdown__notificationsList
-    max-height: 170px
-    overflow-y: auto
-  
-  .this__dropdown__notification
-    jLine(middle)
-    max-width: 500px
-    ellipsis()
-    text-align: left
-    padding: 11px
-    font-size: 12px
-    border-bottom: 1px solid #bdbebd
-    cursor: pointer
-    &:last-child
-      border-bottom: none
-    &:hover
-      background-color: #dedede
-    .button
-      padding: 6px 12px
-    
-  
-  .this__dropdown__notification__img
-    display: inline-block
-    vertical-align: middle
-    size 32px
-    margin-right: 10px
-    img
-      size 100%
-      display: inline-block
-    
+    ul
+      max-height: 170px
+      overflow-y: auto
 
-  .this__dropdown__notification__text
-    display inline-block
-    vertical-align: middle
+    li
+      .flexbox &
+        display flex
+        justify-content space-between
+        align-items middle
+      .no-flexbox &
+        display block
+        clearfix()
+        &>*:last-child
+          float right
+        &>*:first-child
+          float left
+      padding: 10px
+      border-bottom: 1px solid #bdbebd
+      &:last-child
+        border-bottom: none
+      &:hover
+        background-color: #dedede
+
+    
+    .person-view
+      hLine middle
+      text-align: left
+      font-size: 12px
+      cursor: pointer
+      margin-right: 10px
+      .button
+        padding: 6px 12px
+
+      .this__photo
+        size 32px
+        margin-right: 10px
+
+      .this__message
+        max-width: 200px
+        ellipsis()
 
   .this__dropdown__footer
     padding: 10px
@@ -338,10 +347,11 @@ hr
         left auto
         right: 0
 
-    .this__dropdown__notification
-      width: 150px
-      &:last-child
-        border-bottom: none
+    .this__dropdown
+      li
+        width: 150px
+        &:last-child
+          border-bottom: none
       
     
   
@@ -678,7 +688,11 @@ select
     color: #333
     font-size: 20px
     font-weight: 400
-  
+
+  .ui-title
+    color: #333
+    font-size: 30px !important
+
   select
     width: 150px
     padding: 5px 10px
@@ -1694,3 +1708,8 @@ select
   .l-header
     position static
     margin-left: 0
+
+@-moz-document url-prefix()
+  .events .person-view
+    white-space nowrap
+
