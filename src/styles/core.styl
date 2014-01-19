@@ -125,6 +125,7 @@ figure
   &:before
     pb(bottom 100% right 10px)
     size 13px 7px
+    img('button-dropdown-default.png')
 
   &.primary
     border-color: $primary-color
@@ -1363,23 +1364,342 @@ select
 
 
 /*------------------------------------*\
-  Template: user profile
+  Template: MAIN PAGE
 \*------------------------------------*/
+.main-page-view
+  padding: 0
+  min-width 1450px
+  height: 100vh
+  .flexbox &
+    display flex
+    &>*
+      flex 1
 
-/*------------------------------------*\
-  Template: user profile
-\*------------------------------------*/
+  .no-flexbox &
+    position relative
 
-/*------------------------------------*\
-  Template: user profile
-\*------------------------------------*/
+  .this__header
+    background-size 100% 100%
+    background-repeat no-repeat
+    color: #fff
+    .flexbox &
+      display flex
+      flex-direction column
+      justify-content space-around
+
+    .no-flexbox &
+      absolute left top
+      size 50% 100%
+      &>*
+        margin: 8vh 0
+
+
+  .this__name
+    img('logo-main.png')
+    height: 65px
+    text-align: center;
+    hide-text()
+
+  .this__slogan
+    font-size 40px
+    line-height: 1.2
+    text-align: center;
+
+  .this__join
+    text-align: center;
+    font-size: 16px
+
+  for $i in facebook linkedin
+    .this__social__unit--{$i}
+      pressable()
+      position relative
+      display block
+      width: 310px
+      margin: 10px auto
+      padding: 19px
+      border 1px solid #fff
+      border-radius 4px
+      transition background-color .4s
+      text-align: left;
+      font-size: 24px
+      line-height: 1
+      font-weight: 700
+      c1 #fff
+      &:before
+        position relative
+        top -2px
+        pi(middle)
+        size 24px
+        img('social-button-'+$i+'.png')
+        margin-right: 10px
+      if $i == facebook
+        background-color rgb(59,89,152)
+        background-color rgba(59,89,152,.5)
+        &:hover,&:focus
+          background-color rgba(59,89,152,1)
+      if $i == linkedin
+        background-color rgb(0,123,182)
+        background-color rgba(0,123,182,.5)
+        &:hover,&:focus
+          background-color rgba(0,123,182,1)
+
+
+  .this__status
+    display block
+    text-align: center;
+    font-size: 16px
+    font-weight: 700
+    margin-bottom: 20px
+
+  for $i in appstore playstore
+    .this__getApp--{$i}
+      hide-text()
+      pressable()
+      width 130px
+      height 40px
+      margin: 0 3px
+      border-radius 2px
+      background-color #fff
+      img('download-from-'+$i+'.png')
+
+  .this__getApp__wrapper
+    text-align: center;
+    hLine()
+
+
+  .this__nav
+    hLine()
+    text-align: center;
+    color #fff
+    font-size 12px
+    a
+      margin: 0 10px
+      c1(#fff)
+      &:hover,&:focus
+        text-decoration: underline;
 
 
 
 
-/*------------------------------------*\
-    Custom selectbox
-\*------------------------------------*/
+  .this__main
+    position relative
+    .flexbox &
+      display flex
+      flex-direction column
+      justify-content space-around
+      align-content flex-end
+
+    .no-flexbox &
+      absolute right top
+      size 50% 100%
+
+  .this__main__section
+    display none
+    padding-left: 50px
+    clearfix()
+    .flexbox &
+      flex 1
+      flex-direction column
+      justify-content space-around
+      &.is-active
+        display flex
+
+    .no-flexbox &
+      &.is-active
+        display block
+
+  .this__main__section__container
+    padding-right: 18.05555555555556%;
+
+
+  .this__device--notebook
+    height 549px
+    img('device-notebook.png','100% 0')
+    position relative
+    img
+      absolute top 41px right
+
+  .this__device--smartphone
+    height: 557px
+    img('device-smartphone.png','50% 0')
+    position relative
+    img
+      absolute left 50% top 73px
+      margin-left: -104px
+
+  .this__device--pad
+    height: 588px
+    img('device-pad.png','50% 0')
+    position relative
+    img
+      absolute left 50% top 45px
+      margin-left: -168px
+
+  .this__device--iphoneAndAndroid
+    height: 586px
+    position relative
+    right: -40px
+    background-image url('../img/device-iphone-and-android.png')
+    background-position 100% 0
+    background-repeat no-repeat
+
+
+  //.this__feature
+  for $i in membership find connect message press
+    .this__feature--{$i}
+      margin: 30px 0
+      width: 350px
+      float right
+      font-size: 18px
+      position relative
+      padding-left: 20px
+      border-left 1px solid #999
+      &:before
+        pb(right 100% top)
+        size 90px 100%
+        img('feature-'+$i+'.png')
+
+
+
+  .this__feature__title
+    font-size: 20px
+    font-weight 700
+    color: $primary-color;
+    margin-bottom: 5px
+
+  .this__pagination
+    absolute left top
+    height: 100%
+    padding: 0 15px
+    .flexbox &
+      display flex
+      flex-direction column
+      justify-content center
+
+    .no-flexbox &
+      absolute top 20px left 20px
+      hLine()
+
+    a
+      hide-text()
+      size 20px
+      position relative
+      transition transform .4s
+      margin: 5px 0
+      //bullit
+      &:before
+        pb(top 50% left 50%)
+        size 8px
+        margin-top: -4px
+        margin-left: -4px
+        border-radius 50%
+        background-color #ddd
+      &:hover,&:focus
+        transform scale(1.5)
+      &.is-active
+        &:before
+          background-color $primary-color
+        &:hover,&:focus
+          transform none
+
+
+
+
+
+  .this__media__wrapper
+    jLine-old(top)
+    padding-left: 30px
+
+
+
+  .this__media
+    width: 43%
+    margin-bottom: 60px
+
+
+  .this__media__title
+    margin-bottom: 12px
+
+  .this__media__author
+    jLine(middle)
+    margin-top: 20px
+
+  .this__media__author__photo
+    size 60px
+    border-radius 50%
+
+  .this__media__author__content
+    width calc(100% \- 70px)
+
+  .this__login
+    position relative
+    text-align: right;
+    padding: 40px 0 15px
+    margin-right: 18.05555555555556%;
+    font-weight 700
+
+  .this__login__label
+    c1 #333
+    font-size 14px
+    &:after
+      pi(middle)
+      size 15px 8px
+      img('select-arrow.png')
+      margin-left: 3px
+
+
+  .this__login__dropdown
+    text-align: left;
+    border-color: #999
+    color #656565
+    font-size 11px
+    display none
+    absolute top 100% right -10px
+    margin-top: -10px
+    &.is-active
+      display block
+
+
+  for $i in facebook linkedin
+    .this__login__social--{$i}
+      display block
+      padding: 3px 0 3px 3px
+      margin-bottom: 10px
+      font-size 14px
+      width 185px
+      border-width 1px
+      border-style: solid
+      border-radius 2px
+      background-clip padding-box
+      background-color #fff
+      pressable()
+      &:before
+        pi(middle)
+        margin-right: 5px
+        size 24px
+        img('login-social-'+$i+'.png')
+      if $i == facebook
+        color #3b5997
+        border-color: #3b5998;
+      if $i == linkedin
+        color #007bb5
+        border-color: #007bb5;
+
+
+  .this__copyright
+    text-align: right;
+    color #999
+    font-size 12px
+    font-weight 700
+    padding: 15px 0 50px
+    padding-right: 18.05555555555556%;
+
+
+
+
+  /*------------------------------------*\
+      Custom selectbox
+  \*------------------------------------*/
 select
   display: none
 

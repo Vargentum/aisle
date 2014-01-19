@@ -45,22 +45,6 @@ for $i in bottom middle top float
 .reset-font, .font-reset
   reset-font()
 
-/*------------------------------------*\
-    FONTS
-\*------------------------------------*/
-
-@import url('http://fonts.googleapis.com/css?family=PT+Sans:400,700,400italic,700italic')
-
-for $font-face in testFontName
-  @font-face
-    font-family: $font-face
-    font-style: normal
-    font-weight: normal
-    src: url('../fonts/'+$font-face+'.eot')
-    src: url('../fonts/'+$font-face+'.eot?#iefix') format("embedded-opentype"),
-         url('../fonts/'+$font-face+'.woff') format("woff")
-
-
 
 /*------------------------------------*\
     Inject variables into base tags
