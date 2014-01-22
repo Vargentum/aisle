@@ -421,9 +421,15 @@ select
 .l-footer
   position: relative
   container()
+  padding-bottom: 60px
+
+.l-footer__btm
+  @extend .ui-island
+  jLine middle
 
 .pagination
   @extend .ui-island
+  border-top none
   hLine middle
   text-align: center
   a
@@ -453,7 +459,7 @@ select
 
 .boxes
   @extend .ui-island
-  border none
+  margin: -1px 0
   container()
   jLine top
   color: #999
@@ -555,6 +561,10 @@ select
 /*------------------------------------*\
     Template: search
 \*------------------------------------*/
+.search-view
+  container()
+  jLine stretch
+
 .search-settings
   background-color: #f7f7f7
   width: 235px
@@ -563,8 +573,6 @@ select
     background-color: #f7f7f7
     padding: 12px 8px
     border-bottom: 1px solid #d5d5d5
-    &:last-child
-      border-bottom: none
     select
       width:45%
       margin-bottom: 5px
@@ -702,9 +710,9 @@ select
 
   .this__list
     hLine()
-    margin-left: -7px
+    margin-left: 10px
     &>li
-      margin-left: 7px
+      margin-left: 10px
 
   .button
     width: 120px
@@ -797,21 +805,23 @@ select
   .this__header__left
     width: 690px
     padding: 10px 0
+    .no-flexbox &
+      border-right: 1px solid #d5d5d5
 
   .this__header__right
     width: 270px
-    border-left: 1px solid #d5d5d5
     .flexbox &
       display flex
       justify-content flex-end
       align-items center
+      border-left: 1px solid #d5d5d5
     .no-flexbox &
       hLine(middle)
       text-align: center
-      padding-top: 15px
 
     .button:last-child
       margin-left: 12px
+
     .button
       width: 120px
 
@@ -1258,11 +1268,10 @@ select
 \*------------------------------------*/
 .conversations-view
   clearfix()
-
+  margin-bottom: 20px
   .this__conversaton--all
     float: left
     width: 330px
-
 
     .person-view
       position relative
