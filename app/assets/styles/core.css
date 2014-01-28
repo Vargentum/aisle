@@ -391,7 +391,9 @@ select,select:hover{background-color:transparent;border:none;padding:0 20px 0 5p
 .no-flexbox .user-profile .this__main__info{float:right}
 .user-profile .this__main__info p{font-size:13px}
 .user-profile .this__otherPhotosList{margin-top:15px;border-top:1px solid #d5d5d5;}
-.user-profile .this__otherPhotosList li{width:125px}
+.user-profile .this__otherPhotosList ul{margin-left:-21px;}
+.user-profile .this__otherPhotosList ul>*{display:inline-block;vertical-align:top}
+.user-profile .this__otherPhotosList li{margin-left:21px;width:125px}
 .user-profile .this__otherPhotosList img{display:block;width:100%;height:auto;}
 .user-profile .this__otherPhotosList img:hover{-webkit-box-shadow:0 0 0 2px #fff,0 0 0 3px #babcbb;box-shadow:0 0 0 2px #fff,0 0 0 3px #babcbb}
 .user-profile .this__otherPhotosList__title{color:#333;font-size:24px;margin:10px 0;font-weight:400;}
