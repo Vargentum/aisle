@@ -1111,8 +1111,15 @@ select
     hLine(middle)
 
   .this__options--creditCard__expiryDate
-    width: 315px
-    jLine()
+    width: 320px
+    jLine top
+    select,
+    .customSelect
+      width: 155px !important
+
+    .customSelect dl
+      width: 153px !important
+
 
 /*------------------------------------*\
   Template: Edit profile
@@ -1170,16 +1177,31 @@ select
     font-size: 13px
     color: #656565
 
-  .this__birth--day
-    width: 45px
-    margin-right: 5px
+  .this__birth
+    jLine(top)
 
-  .this__birth--month
-    width: 100px
-    margin-right: 5px
+    .this__birth--day,
+    .customSelect:nth-child(1)
+      width: 45px !important
 
-  .this__birth--year
-    width: 75px
+    .customSelect:nth-child(1) dl
+      width: 43px !important
+
+
+    .this__birth--month,
+    .customSelect:nth-child(2)
+      width: 100px !important
+
+    .customSelect:nth-child(2) dl
+      width: 98px !important
+
+
+    .this__birth--year
+    .customSelect:nth-child(3)
+      width: 75px !important
+
+    .customSelect:nth-child(3) dl
+      width: 73px !important
 
   .this__photoWrapper
     container()
