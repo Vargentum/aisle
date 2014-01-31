@@ -112,6 +112,19 @@ jLine-old($vAlign = baseline)
     line-height: $baseLineHeight
 
 
+
+vAlign($type = middle)
+  hLine $type
+  &:before
+    pi $type
+    size: 0 100%
+  //prevent bugs on small screens
+  white-space nowrap
+  &>*
+    white-space normal
+
+
+
 container($w = $baseMaxWidth)
   max-width: $w
   min-width $baseMinWidth

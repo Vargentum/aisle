@@ -223,8 +223,6 @@ hr
 
   ol
     list-style-type decimal
-
-
 /*------------------------------------*\
     HEADER
 \*------------------------------------*/
@@ -1637,21 +1635,15 @@ select
     absolute left top
     height: 100%
     padding: 0 15px
-    .flexbox &
-      display flex
-      flex-direction column
-      justify-content center
-
-    .no-flexbox &
-      absolute top 20px left 20px
-      hLine()
+    vAlign()
 
     a
+      display block
       hide-text()
       size 20px
       position relative
       transition transform .4s
-      margin: 5px 0
+      margin: 10px 0
       //bullit
       &:before
         pb(top 50% left 50%)
