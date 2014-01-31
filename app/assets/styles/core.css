@@ -426,6 +426,7 @@ select,select:hover{background-color:transparent;border:none;padding:0 20px 0 5p
 .pay-plane .this__invites{margin-bottom:20px;width:135px;height:135px;-webkit-border-radius:50%;border-radius:50%;background-color:#00bff3;color:#fff;font-size:22px;line-height:1;font-weight:700;-webkit-transition:0.4s background-color;-moz-transition:0.4s background-color;-o-transition:0.4s background-color;-ms-transition:0.4s background-color;transition:0.4s background-color;}
 .flexbox .pay-plane .this__invites{display:-webkit-box;display:-moz-box;display:-webkit-flex;display:-ms-flexbox;display:box;display:flex;-webkit-box-pack:center;-moz-box-pack:center;-o-box-pack:center;-ms-flex-pack:center;-webkit-justify-content:center;justify-content:center;-webkit-box-align:center;-moz-box-align:center;-o-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center;-webkit-box-orient:vertical;-moz-box-orient:vertical;-o-box-orient:vertical;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column}
 .no-flexbox .pay-plane .this__invites{text-align:center;padding-top:28px}
+.no-flexbox .pay-plane{text-align:center}
 .pay-plane .this__invites__counter{font-size:50px;display:block}
 .pay-plane .this__title{color:#333;font-size:22px;font-weight:700;margin-bottom:0}
 .pay-plane .this__price{color:#333;text-transform:uppercase;font-weight:700}
