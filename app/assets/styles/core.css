@@ -230,6 +230,7 @@ hr{margin:10px 0;background-color:#d5d5d5}
 .events .this__userMenu .this__dropdown li:last-child{border-bottom:none}
 .events .this__userMenu__label{font-size:14px;}
 .events .this__userMenu__label:after{content:'';display:inline-block;vertical-align:baseline;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAICAQAAACM2m15AAAAcElEQVQI12MIXRvqxoAVhIqEJjCEmoQ+Cw3EIikVei20HcTQCX0SGosmqRh6L7QaxlENvR+agSSpEfo4NBdZtVzo9dAyKNsQaF0Cul3ioRdCW4C0VejL0BBsLhUKPRm6OvR1qBcDDq/whx4MdUAWAQCweyGWlZHYkgAAAABJRU5ErkJggg==");background-repeat:no-repeat;background-position:50% 50%;width:15px;height:8px;margin-left:7px}
+.events .jspPane{width:inherit !important}
 .mainNav a{display:block;padding:0 15px;line-height:1.2;font-weight:bold;border-left:1px solid #d5d5d5}
 .mainNav a,.mainNav a:active,.mainNav a:visited{color:#656565}
 .mainNav a:hover,.mainNav a:focus{color:#2f80e4}
