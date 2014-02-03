@@ -38,4 +38,20 @@
     });
   });
 
+  $(function() {
+    var $main;
+    $main = $('.main-page-view').find('.this__main');
+    $main.onepage_scroll({
+      sectionContainer: ".this__main__section",
+      easing: "ease",
+      animationTime: 1000,
+      pagination: true,
+      updateURL: false,
+      loop: false,
+      keyboard: true,
+      responsiveFallback: false
+    });
+    return $('.onepage-pagination').appendTo('.this__column--rt');
+  });
+
 }).call(this);

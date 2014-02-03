@@ -1429,31 +1429,40 @@ select
 \*------------------------------------*/
 .main-page-view
   padding: 0
-  min-width 1450px
-  height: 100vh
+  margin: 0
+  height: 100%
+  position relative
   .flexbox &
     display flex
-    &>*
-      flex 1
+    justify-content space-between
+    align-items flex-start
 
   .no-flexbox &
-    position relative
+    hLine(top)
+    white-space nowrap
+    &>*
+      white-space normal
 
   .this__header
-    background-size 100% 100%
-    background-repeat no-repeat
+    min-width: 350px
+    min-height: 980px
+    size 50% 100%
+    position relative
+    background-color #3c7cc6
+    z-index: 1
     color: #fff
-    .flexbox &
-      display flex
-      flex-direction column
-      justify-content space-around
+    &>*
+      margin: 8vh 0
 
-    .no-flexbox &
-      absolute left top
-      size 50% 100%
-      &>*
-        margin: 8vh 0
+  .this__column--rt
+    position relative
+    size 50% 100%
+    min-width: 750px
 
+  .this__bgImg
+    absolute top right
+    z-index: -1
+    margin: 0
 
   .this__name
     img('logo-main.png')
@@ -1550,32 +1559,17 @@ select
 
 
 
-  .this__main
-    position relative
+  .this__main__section
+    padding-left: 50px
+    clearfix()
     .flexbox &
       display flex
       flex-direction column
       justify-content space-around
-      align-content flex-end
-
-    .no-flexbox &
-      absolute right top
-      size 50% 100%
-
-  .this__main__section
-    display none
-    padding-left: 50px
-    clearfix()
-    .flexbox &
       flex 1
-      flex-direction column
-      justify-content space-around
-      &.is-active
-        display flex
 
     .no-flexbox &
-      &.is-active
-        display block
+      display block
 
   .this__main__section__container
     padding-right: 18.05555555555556%;
@@ -1636,38 +1630,6 @@ select
     color: $primary-color;
     margin-bottom: 5px
 
-  .this__pagination
-    absolute left top
-    height: 100%
-    padding: 0 15px
-    vAlign()
-
-    a
-      display block
-      hide-text()
-      size 20px
-      position relative
-      transition transform .4s
-      margin: 10px 0
-      //bullit
-      &:before
-        pb(top 50% left 50%)
-        size 8px
-        margin-top: -4px
-        margin-left: -4px
-        border-radius 50%
-        background-color #ddd
-      &:hover,&:focus
-        transform scale(1.5)
-      &.is-active
-        &:before
-          background-color $primary-color
-        &:hover,&:focus
-          transform none
-
-
-
-
 
   .this__media__wrapper
     jLine-old(top)
@@ -1695,10 +1657,11 @@ select
     width calc(100% \- 70px)
 
   .this__login
-    position relative
+    absolute right 20px top
+    width: 100%
+    z-index: 100;
     text-align: right;
-    padding: 40px 0 15px
-    margin-right: 18.05555555555556%;
+    padding: 10px 0
     font-weight 700
 
   .this__login__label
@@ -1718,7 +1681,7 @@ select
     font-size 11px
     display none
     absolute top 100% right -10px
-    margin-top: -10px
+    margin-top: -5px
     &.is-active
       display block
 
@@ -1750,19 +1713,114 @@ select
 
 
   .this__copyright
+    display block
+    absolute left bottom
+    background-color #fff
+    width: 100%
+    z-index: 100;
     text-align: right;
     color #999
     font-size 12px
     font-weight 700
-    padding: 15px 0 50px
-    padding-right: 18.05555555555556%;
+    padding: 5px
+
+
+/*	--------------------------------------------------
+	Main page scroll
+	-------------------------------------------------- */
+body, html {
+  margin: 0;
+  -webkit-transition: opacity 400ms;
+  -moz-transition: opacity 400ms;
+  transition: opacity 400ms;
+}
+
+body, .onepage-wrapper, html {
+  display: block;
+  position: static;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.onepage-wrapper {
+  width: 100%;
+  height: 100%;
+  display: block;
+  position: relative;
+  padding: 0;
+  -webkit-transform-style: preserve-3d;
+}
+
+.onepage-wrapper .section {
+  width: 100%;
+  height: 100%;
+}
+
+.onepage-pagination
+  absolute top 50% left
+  margin-top: -(190px / 2)
+  background-color transparent
+  padding: 0 15px
+  z-index: 100;
+  li
+    display block
+  a
+    display block
+    hide-text()
+    size 20px
+    position relative
+    transition transform .4s
+    margin: 10px 0
+    //bullit
+    &:before
+      pb(top 50% left 50%)
+      size 8px
+      margin-top: -4px
+      margin-left: -4px
+      border-radius 50%
+      background-color #ddd
+    &:hover,&:focus
+      transform scale(1.5)
+    &.active
+      &:before
+        background-color $primary-color
+      &:hover,&:focus
+        transform none
+
+
+.disabled-onepage-scroll, .disabled-onepage-scroll .wrapper {
+  overflow: auto;
+}
+
+.disabled-onepage-scroll .onepage-wrapper .section {
+  position: relative !important;
+  top: auto !important;
+}
+.disabled-onepage-scroll .onepage-wrapper {
+  -webkit-transform: none !important;
+  -moz-transform: none !important;
+  transform: none !important;
+  -ms-transform: none !important;
+  min-height: 100%;
+}
+
+
+.disabled-onepage-scroll .onepage-pagination {
+  display: none;
+}
+
+body.disabled-onepage-scroll, .disabled-onepage-scroll .onepage-wrapper, html {
+  position: inherit;
+}
 
 
 
 
-  /*------------------------------------*\
-      Custom selectbox
-  \*------------------------------------*/
+
+/*------------------------------------*\
+   Custom selectbox
+\*------------------------------------*/
 select
   display: none
 
@@ -1772,7 +1830,7 @@ select
   font-size: 11px
   margin: 0
 
-.customSelect .selectedValue 
+.customSelect .selectedValue
   padding: 8px 15px 8px 5px
   width: inherit
   display: block
@@ -1791,7 +1849,7 @@ select
     border none
     background-color: #d5d5d5
 
-.customSelect .selectList 
+.customSelect .selectList
   z-index: 100
   position: absolute
   left: -999em
@@ -1806,26 +1864,26 @@ select
     background-color: #d5d5d5
 
 
-.customSelect.select-open .selectList 
+.customSelect.select-open .selectList
   left: 0 !important
   top: auto !important
 
-.customSelect .selectList dl 
+.customSelect .selectList dl
   background: #fff
 
-.customSelect .selectList dl.defaultScrollbar 
+.customSelect .selectList dl.defaultScrollbar
   overflow-x: hidden
   overflow-y: scroll
 
-.customSelect dl, .customSelect dd 
+.customSelect dl, .customSelect dd
   margin: 0
 
-.customSelect dd 
+.customSelect dd
   zoom: 1
   cursor: pointer
 
 .customSelect .selected,
-.customSelect .selectList dd.hovered 
+.customSelect .selectList dd.hovered
   text-decoration: none
   background-color: #d5d5d5
   .search-settings &
@@ -1837,7 +1895,7 @@ select
   font-style: italic
   padding: 2px 10px 2px 6px
 
-.customSelect dd 
+.customSelect dd
   padding: 5px 10px 5px 8px
   font-size: 11px
   border-top: 1px solid transparent
@@ -1850,16 +1908,16 @@ select
   .search-settings &
     background-color: #d5d5d5
 
-.hasJS select.custom 
+.hasJS select.custom
   position: absolute
   left: -999em
 
-.customSelect.disabled .selectedValue 
+.customSelect.disabled .selectedValue
   border: 1px solid #ccc
   color: #ccc
   cursor: default
 
-.customSelect .caret 
+.customSelect .caret
   position: absolute
   top: 50%
   right: 2px
@@ -1871,26 +1929,26 @@ select
   transform: scale(.75)
 
 
-.customSelect.select-open .caret 
+.customSelect.select-open .caret
   img('select-arrow-reversed.png')
 
-.customSelect .jspPane 
+.customSelect .jspPane
   overflow-x: hidden
 
-.customSelect .jspVerticalBar 
+.customSelect .jspVerticalBar
   background: none
   width: 8px
 
-.customSelect .jspHorizontalBar 
+.customSelect .jspHorizontalBar
   height: 0
   overflow: hidden
 
-.customSelect .jspTrack 
+.customSelect .jspTrack
   background: none
   width: 4px
   margin: 4px 0
 
-.customSelect .jspDrag 
+.customSelect .jspDrag
   background-color #505050
   .search-settings &
     background-color: rgba(247,247,247,.85)
@@ -2008,7 +2066,7 @@ select
   background: rgba(0,0,0,.5)
 
 
-.reveal-modal 
+.reveal-modal
   visibility: hidden
   absolute (top 100px left 50%)
   z-index: 301
@@ -2031,7 +2089,7 @@ select
     width: 100px
     text-align: center
 
-.close-reveal-modal 
+.close-reveal-modal
   absolute(top 17px right 20px)
   cursor: pointer
   size 11px
@@ -2113,7 +2171,10 @@ select
   border-radius 50%
 
 
-/*Switch Fixed header to static on small screens*/
+
+/*	--------------------------------------------------
+	Crossbrowser fixes
+	-------------------------------------------------- */
 @media only screen and (max-width: 980px)
   body
     padding-top: 0
