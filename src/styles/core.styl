@@ -1561,6 +1561,7 @@ select
 
   .this__main__section
     padding-left: 50px
+    min-height: 730px
     clearfix()
     .flexbox &
       display flex
@@ -1657,7 +1658,7 @@ select
     width calc(100% \- 70px)
 
   .this__login
-    absolute right 20px top
+    fixed right 20px top
     width: 100%
     z-index: 100;
     text-align: right;
@@ -1714,8 +1715,7 @@ select
 
   .this__copyright
     display block
-    absolute left bottom
-    background-color #fff
+    fixed right bottom
     width: 100%
     z-index: 100;
     text-align: right;

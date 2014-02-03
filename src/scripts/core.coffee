@@ -39,10 +39,13 @@ $ ->
     updateURL: false,
     loop: false,
     keyboard: true,
-    responsiveFallback: false
+#  height value
+    responsiveFallback: 730
   #  beforeMove: ->(index),
   #  aftermove: ->(index)
   )
+
+  console.log($(window).height())
 
   #  fix navigation positioning
   $('.onepage-pagination').appendTo('.this__column--rt')

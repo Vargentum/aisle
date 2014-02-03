@@ -334,7 +334,7 @@
     }
     
     function responsive() {
-      if ($(window).width() < settings.responsiveFallback) {
+      if ($(window).height() < settings.responsiveFallback) {
         $("body").addClass("disabled-onepage-scroll");
         $(document).unbind('mousewheel DOMMouseScroll');
         el.swipeEvents().unbind("swipeDown swipeUp");

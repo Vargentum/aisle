@@ -49,8 +49,9 @@
       updateURL: false,
       loop: false,
       keyboard: true,
-      responsiveFallback: false
+      responsiveFallback: 730
     });
+    console.log($(window).height());
     return $('.onepage-pagination').appendTo('.this__column--rt');
   });
 
