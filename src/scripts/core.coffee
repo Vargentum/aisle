@@ -40,7 +40,7 @@ $ ->
     loop: false,
     keyboard: true,
 #  height value
-    responsiveFallback: 730
+    responsiveFallback: false
   #  beforeMove: ->(index),
   #  aftermove: ->(index)
   )

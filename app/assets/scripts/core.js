@@ -49,7 +49,7 @@
       updateURL: false,
       loop: false,
       keyboard: true,
-      responsiveFallback: 730
+      responsiveFallback: false
     });
     console.log($(window).height());
     return $('.onepage-pagination').appendTo('.this__column--rt');
