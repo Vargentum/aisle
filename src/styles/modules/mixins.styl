@@ -134,3 +134,21 @@ pressable($deep = 2px)
   position relative
   &:active
     top $deep
+
+/*------------------------------------*\
+  Responsive
+\*------------------------------------*/
+b-max()
+  condition = 'only screen and (max-width: %s)' % arguments[0]
+  @media condition
+    {block}
+
+b-min()
+  condition = 'only screen and (min-width: %s)' % arguments[0]
+  @media condition
+    {block}
+
+b-height()
+  condition = 'only screen and (max-height: %s)' % arguments[0]
+  @media condition
+    {block}
