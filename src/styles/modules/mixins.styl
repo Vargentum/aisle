@@ -143,6 +143,10 @@ ipad-land()
   @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape)
     {block}
 
+ipad-land-retina()
+  @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : landscape)and (-webkit-min-device-pixel-ratio: 2)
+    {block}
+
 b-max()
   condition = 'only screen and (max-width: %s)' % arguments[0]
   @media condition

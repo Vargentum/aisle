@@ -1612,6 +1612,14 @@ select
     .this__feature--press
       top -50px
 
+  +ipad-land-retina()
+    .this__feature--find,
+    .this__feature--connect
+      top: -35px
+
+    .this__feature--press
+      top -50px
+
   for $i in membership find connect message press
     .this__feature--{$i}:before
         background-image data('feature-'+$i+'.png')
