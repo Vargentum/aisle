@@ -1587,7 +1587,7 @@ select
     .no-flexbox &
       margin: 40px 0
 
-  .this__device--notebook
+  .this__device--1
     margin-right: 0
     text-align: right
 
@@ -1604,9 +1604,18 @@ select
       background-repeat no-repeat
       background-position 50% 50%
 
+  +b-max(1200px)
+    .this__feature--find,
+    .this__feature--connect
+      top: -35px
+
+    .this__feature--press
+      top -50px
+
   for $i in membership find connect message press
     .this__feature--{$i}:before
         background-image data('feature-'+$i+'.png')
+
 
 
   .this__feature__title
@@ -1715,6 +1724,7 @@ body, html {
   -webkit-transition: opacity 400ms;
   -moz-transition: opacity 400ms;
   transition: opacity 400ms;
+  overflow-y hidden
 }
 
 body, .onepage-wrapper, html {
