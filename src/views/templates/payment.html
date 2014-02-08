@@ -62,46 +62,10 @@
     </ul>
     <ul class="this__tabs">
       <li class="this__tabs__unit">
-        <!--creditCard options-->
-        <div class="this__options--creditCard">
-          <h3><b>Enter your credit card details</b></h3>
-
-          <label class="this__options--creditCard__types">
-            <span>Credit card no.</span>
-            <input type="text"/>
-          </label>
-          <label>
-            <span>Expiry date</span>
-            <div class="this__options--creditCard__expiryDate">
-              <select>
-                <option value="">Item 1</option>
-                <option value="">Item 2</option>
-                <option value="">Item 100500</option>
-              </select>
-              <select>
-                <option value="">Item 1</option>
-                <option value="">Item 2</option>
-                <option value="">Item 100500</option>
-              </select>
-            </div>
-          </label>
-          <label>
-            <span>Card holder</span>
-            <input type="text" placeholder="Name as on card"/>
-          </label>
-          <label class="this__options--creditCard__cvv">
-            <span></span>
-            <div class="l-hLine--middle">
-              <input type="text"/>
-              <span class="this__options--creditCard__cvv__description">The 3 digit number printed on the back of the card</span>
-            </div>
-          </label>
-          <label class="this__options--creditCard__agreement">
-            <input type="checkbox"/>
-            <span>I understand and agree to the rules and restrictions of this fare, the Booking Policy and the Terms & Conditions of Aisle.</span>
-          </label>
-          <button type="submit" class="button primary">Make Payment</button>
-        </div>
+        include "payment-tabs/payment-1"
+        <!--include "payment-tabs/payment-2"-->
+        <!--include "payment-tabs/payment-3"-->
+        <!--include "payment-tabs/payment-4"-->
       </li>
     </ul>
   </section>
