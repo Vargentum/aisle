@@ -202,434 +202,98 @@
 
   <!--include "templates/invitations"-->
   <!--include "templates/search"-->
-  <!--include "templates/payment"-->
+  <div class="payment-view">
+    <section class="this__section">
+      <h1 class="ui-title">Payment</h1>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere fugit maxime odit possimus qui rem vero. Ab animi cumque, esse expedita inventore ipsum officia pariatur qui quos vero voluptatem!</p>
+      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio facere fugit maxime odit possimus qui rem vero. Ab animi cumque, esse expedita inventore ipsum officia pariatur qui quos vero voluptatem!</p>
+    </section>
+    <section class="this__section">
+      <h2 class="this__section__header">Billing Address</h2>
+      <div class="this__section__main">
+        <div class="ui-formWrapper">
+          <label>
+            <span>Name</span>
+            <input type="text"/>
+          </label>
+          <label>
+            <span>Telephone</span>
+            <input type="text"/>
+          </label>
+          <label>
+            <span>Mobile number</span>
+            <input type="tel"/>
+          </label>
+          <label>
+            <span>Email address</span>
+            <input type="email"/>
+          </label>
+          <label style="width: 485px">
+            <span>Billing address</span>
+            <input type="text"/>
+          </label>
+          <label>
+            <span>City</span>
+            <input type="text"/>
+          </label>
+          <label>
+            <span>State/Province</span>
+            <input type="text"/>
+          </label>
+          <label>
+            <span>Zip code</span>
+            <input type="text"/>
+          </label>
+          <label>
+            <span>Country</span>
+            <select>
+              <option value="">Item 1</option>
+              <option value="">Item 2</option>
+              <option value="">Item 100500</option>
+            </select>
+          </label>
+          <button type="submit" class="button  primary">Proceed</button>
+        </div>
+      </div>
+    </section>
+    <section class="this__section">
+      <h3 class="this__section__header">Payment Options</h3>
+      <ul class="this__tabs__nav  js-tabs">
+        <li><a class="is-active" href="#">Credit Card</a></li>
+        <li><a href="#">Debit Card</a></li>
+        <li><a href="#">Net Banking</a></li>
+        <li><a href="#">PayPal</a></li>
+      </ul>
+      <ul class="this__tabs">
+        <li class="this__tabs__unit">
+          <!--include "payment-tabs/payment-1"-->
+          <!--include "payment-tabs/payment-2"-->
+          <!--include "payment-tabs/payment-3"-->
+          <!--creditCard options-->
+          <div class="this__payment">
+            <h3 class="this__payment__title">PayPal</h3>
+            <!--<div class="this__payment__main"></div>-->
+            <footer>
+              <label class="this__payment--card__agreement">
+                <input type="checkbox"/>
+                <span>I understand and agree to the rules and restrictions of this fare, the Booking Policy and the Terms & Conditions of Aisle.</span>
+              </label>
+              <button type="submit" class="button-paypal-payment">Checkout using Paypal</button>
+            </footer>
+          </div>
+
+        </li>
+      </ul>
+    </section>
+  </div>
+
+
   <!--include "templates/edit-profile"-->
   <!--include "templates/edit-profile-full"-->
   <!--include "templates/bookmarks"-->
   <!--include "templates/conversations"-->
   <!--include "templates/profile"-->
-
-  <ul style="font-size: 18px;">
-    <li>User profile modals</li>
-    <li><a href="#" data-reveal-id="send-message">send-message</a></li>
-    <li><a href="#" data-reveal-id="decline-invitation">decline-invitation</a></li>
-    <li><a href="#" data-reveal-id="pay-planes">pay-planes</a></li>
-    <li>Other modals</li>
-    <li><a href="#" data-reveal-id="profile-1">User Profile</a></li>
-    <li><a href="#" data-reveal-id="modal-contacts">Contacts</a></li>
-    <li><a href="#" data-reveal-id="modal-privacy">Privacy</a></li>
-    <li><a href="#" data-reveal-id="modal-terms">Terms</a></li>
-    <li>New modals</li>
-    <li><a href="#" data-reveal-id="buy-invites">Buy invites</a></li>
-    <li><a href="#" data-reveal-id="almost-done">Almost done</a></li>
-  </ul>
-
-
-
-  <!--MODAL: send message-->
-  <div id="send-message" class="reveal-modal">
-    <header class="this__title">
-      <h2>Send him a message</h2>
-    </header>
-    <label>
-      <textarea placeholder="Start typing your message here..."></textarea>
-    </label>
-    <footer class="this__footer">
-      <a href="#" class="button  primary">Cancel</a>
-      <a href="#" class="button  secondary">Send</a>
-    </footer>
-    <a class="close-reveal-modal"></a>
-  </div>
-
-  <!--MODAL: decline invitation-->
-  <div id="decline-invitation" class="reveal-modal">
-    <header class="this__title">
-      <h2>Decline invitation</h2>
-    </header>
-    <p>Are you sure you want to decline his invitation to connect?</p>
-    <footer class="this__footer">
-      <a href="#" class="button  primary">No</a>
-      <a href="#" class="button  secondary">Yes</a>
-    </footer>
-    <a class="close-reveal-modal"></a>
-  </div>
-
-  <!--MODAL: pay planes-->
-  <div id="pay-planes" class="reveal-modal">
-    <header class="this__title">
-      <h2>Pay per connection</h2>
-    </header>
-    <p>Connecting with Aisle members is easy, but we put a price tag on it to make sure that you
-      are genuinely interested in that person. Your invite will only be counted out once the
-      invited member accepts your invitation. If it gets declined, your invite will be credited back to
-      “Invites left”. If in case you don’t get a response, simply withdraw your invitation, and we will
-      credit back your invite for future use. It’s a win-win all over!
-    </p>
-    <div class="l-jLine--top">
-      <!--pay plane-->
-      <div class="pay-plane">
-        <div class="this__invites">
-          <span class="this__invites__counter">1</span>
-          <span>Invite</span>
-        </div>
-        <h2 class="this__title">Rs 1,999</h2>
-        <h3>Approx <span class="this__price">USD 33</span></h3>
-        <button class="button secondary">Buy</button>
-      </div>
-      <!--pay plane-->
-      <div class="pay-plane">
-        <div class="this__invites">
-          <span class="this__invites__counter">3</span>
-          <span>Invites</span>
-        </div>
-        <h2 class="this__title">Rs 1,999</h2>
-        <h3>Approx <span class="this__price">USD 66</span></h3>
-        <button class="button secondary">Buy</button>
-      </div>
-      <!--pay plane-->
-      <div class="pay-plane">
-        <div class="this__invites">
-          <span class="this__invites__counter">5</span>
-          <span>Invites</span>
-        </div>
-        <h2 class="this__title">Rs 1,999</h2>
-        <h3>Approx <span class="this__price">USD 99</span></h3>
-        <button class="button secondary">Buy</button>
-      </div>
-    </div>
-    <a class="close-reveal-modal"></a>
-  </div>
-
-
-
-  <div id="modal-contacts" class="reveal-modal  modal--980  modal-contacts">
-    <h1 class="this__title">Contact</h1>
-    <div class="this__main">
-      <div class="this__column">
-        <h2><b>Column 1</b></h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam fugit, soluta. Ad aliquid asperiores atque consectetur deleniti doloremque, doloribus eaque exercitationem illum in, nam optio quos suscipit totam ullam voluptas!
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam fugit, soluta. Ad aliquid asperiores atque consectetur deleniti doloremque, doloribus eaque exercitationem illum in, nam optio quos suscipit totam ullam voluptas!
-      </div>
-      <div class="this__column">
-        <h2><b>Column 2</b></h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam fugit, soluta. Ad aliquid asperiores atque consectetur deleniti doloremque, doloribus eaque exercitationem illum in, nam optio quos suscipit totam ullam voluptas!
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam fugit, soluta. Ad aliquid asperiores atque consectetur deleniti doloremque, doloribus eaque exercitationem illum in, nam optio quos suscipit totam ullam voluptas!
-      </div>
-      <div class="this__column">
-        <h2><b>Column 3</b></h2>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam fugit, soluta. Ad aliquid asperiores atque consectetur deleniti doloremque, doloribus eaque exercitationem illum in, nam optio quos suscipit totam ullam voluptas!
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam fugit, soluta. Ad aliquid asperiores atque consectetur deleniti doloremque, doloribus eaque exercitationem illum in, nam optio quos suscipit totam ullam voluptas!
-      </div>
-    </div>
-
-    <a class="close-reveal-modal"></a>
-  </div>
-
-
-
-
-  <div id="modal-privacy" class="reveal-modal  modal--980  modal-text">
-    <div class="this__main  ui-wswg  js-scrollbar">
-      <h1 class="this__title">Privacy</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-    </div>
-
-    <a class="close-reveal-modal"></a>
-  </div>
-
-
-
-
-  <div id="modal-terms" class="reveal-modal  modal--980  modal-text">
-    <div class="this__main  ui-wswg  js-scrollbar">
-      <h1 class="this__title">Terms</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusamus accusantium commodi cumque delectus dignissimos eveniet facilis fuga fugit, iste nostrum odio officia perspiciatis provident quasi reprehenderit suscipit vero vitae voluptatibus.
-    </div>
-
-    <a class="close-reveal-modal"></a>
-  </div>
-
-
-  <!--NEW modals-->
-
-  <div id="buy-invites" class="reveal-modal  modal--980  modal-buy-invites">
-    <div class="this__main">
-      <h1 class="this__title">Buy items</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur ducimus et expedita hic illum ipsa iusto maxime modi molestiae neque perspiciatis quia quod similique sunt tempora, vel, vitae voluptas.</p>
-      <div class="pay-plane-wrap">
-        <!--pay plane-->
-        <div class="pay-plane">
-          <div class="this__invites">
-            <span class="this__invites__counter">1</span>
-            <span>Invite</span>
-          </div>
-          <h2 class="this__title">Rs 1,999</h2>
-          <h3>Approx <span class="this__price">USD 33</span></h3>
-          <button class="button secondary">Buy</button>
-        </div>
-        <!--pay plane-->
-        <div class="pay-plane">
-          <div class="this__invites">
-            <span class="this__invites__counter">3</span>
-            <span>Invites</span>
-          </div>
-          <h2 class="this__title">Rs 1,999</h2>
-          <h3>Approx <span class="this__price">USD 66</span></h3>
-          <button class="button secondary">Buy</button>
-        </div>
-        <!--pay plane-->
-        <div class="pay-plane">
-          <div class="this__invites">
-            <span class="this__invites__counter">5</span>
-            <span>Invites</span>
-          </div>
-          <h2 class="this__title">Rs 1,999</h2>
-          <h3>Approx <span class="this__price">USD 99</span></h3>
-          <button class="button secondary">Buy</button>
-        </div>
-      </div>
-
-      <div class="edit-profile-view">
-        <header>
-          <h1 class="ui-title">FAQ</h1>
-        </header>
-
-        <section class="this__section  is-active">
-          <header class="this__section__header">About</header>
-          <div class="this__section__main">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci blanditiis consequatur ducimus hic illum in modi, nisi nobis officiis quae quasi quia quidem quisquam repudiandae rerum similique, velit veniam?</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci blanditiis consequatur ducimus hic illum in modi, nisi nobis officiis quae quasi quia quidem quisquam repudiandae rerum similique, velit veniam?</p>
-          </div>
-        </section>
-
-        <section class="this__section">
-          <header class="this__section__header">Lorem Ipsum</header>
-          <div class="this__section__main"></div>
-        </section>
-
-        <section class="this__section">
-          <header class="this__section__header">Lorem Ipsum</header>
-          <div class="this__section__main"></div>
-        </section>
-
-        <section class="this__section">
-          <header class="this__section__header">Lorem Ipsum</header>
-          <div class="this__section__main"></div>
-        </section>
-
-        <section class="this__section">
-          <header class="this__section__header">Lorem Ipsum</header>
-          <div class="this__section__main"></div>
-        </section>
-      </div>
-
-    </div>
-    <a class="close-reveal-modal"></a>
-  </div>
-
-
-  <div id="almost-done" class="reveal-modal  modal--980  modal-almostDone">
-    <div class="this__main">
-      <h1 class="this__title">Almost done</h1>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur ducimus et expedita hic illum ipsa iusto maxime modi molestiae neque perspiciatis quia quod similique sunt tempora, vel, vitae voluptas.</p>
-      <div class="this__textareaSection">
-        <textarea class="this__textarea" placeholder="Type about yourself here..."></textarea>
-        <footer class="this__footer">
-          <span>Character limitation</span>
-          <b class="this__charLimit">500</b>
-        </footer>
-      </div>
-
-
-      <div class="edit-profile-view">
-        <header>
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid assumenda corporis cumque cupiditate deleniti, doloremque eaque, earum et fugit laborum magnam nam necessitatibus nesciunt numquam reiciendis rerum temporibus vel? Illo.
-        </header>
-
-        <section class="this__section  is-active">
-          <header class="this__section__header">About</header>
-          <div class="this__section__main">
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci blanditiis consequatur ducimus hic illum in modi, nisi nobis officiis quae quasi quia quidem quisquam repudiandae rerum similique, velit veniam?</p>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ab adipisci blanditiis consequatur ducimus hic illum in modi, nisi nobis officiis quae quasi quia quidem quisquam repudiandae rerum similique, velit veniam?</p>
-          </div>
-        </section>
-
-        <section class="this__section">
-          <header class="this__section__header">Lorem Ipsum</header>
-          <div class="this__section__main"></div>
-        </section>
-
-        <section class="this__section">
-          <header class="this__section__header">Lorem Ipsum</header>
-          <div class="this__section__main"></div>
-        </section>
-
-        <section class="this__section">
-          <header class="this__section__header">Lorem Ipsum</header>
-          <div class="this__section__main"></div>
-        </section>
-
-        <section class="this__section">
-          <header class="this__section__header">Lorem Ipsum</header>
-          <div class="this__section__main"></div>
-        </section>
-      </div>
-
-      <footer class="this__footer">
-        <button type="submit" class="button  primary  this__submit">Take me in</button>
-      </footer>
-    </div>
-    <a class="close-reveal-modal"></a>
-  </div>
-
-
-
-  <!--MODALS-->
-  <div id="profile-1" class="reveal-modal  user-profile  user-profile-modal">
-    <header class="this__header">
-      <div class="this__header__left">
-        <h2 class="this__title">Able Joseph Sarath Nair</h2>
-        <div class="this__header__info">
-          <span>Ref. ID 1234XYZ</span>
-          <span class="this__email">Varunjosephkurien@hotmailer.com</span>
-          <span class="this__tel">+9715521166056</span>
-        </div>
-      </div>
-      <div class="this__header__right">
-        <button class="button tiny radius  primary">Bookmark</button>
-        <button class="button tiny radius  secondary  icon-plus">Connect</button>
-      </div>
-    </header>
-
-    <div class="this__main">
-      <div class="this__main__photo">
-        <img src="http://fakeimg.pl/350x350/?text=350x350">
-      </div>
-
-      <div class="this__main__info">
-        <div>
-          <h3>About</h3>
-          <p>This is Photoshop's version  of Lorem Ipsum. Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin, lorem quis bibendum auctor, nisi elit consequat ipsum, nec sagittis sem nibh id elit. Duis sed odio sit amet nibh vulputate cursus a sit amet mauris. Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non  mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos.</p>
-        </div>
-        <div class="this__otherPhotosList">
-          <h3 class="this__otherPhotosList__title">More <a href="#">Images</a></h3>
-          <ul>
-            <li><img src="http://fakeimg.pl/125x125/?text=Img1"></li>
-            <li><img src="http://fakeimg.pl/125x125/?text=Img2"></li>
-            <li><img src="http://fakeimg.pl/125x125/?text=Img3"></li>
-            <li><img src="http://fakeimg.pl/125x125/?text=Img4"></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-
-    <div class="this__info">
-      <div class="this__info__lt">
-        <div class="this__info__section">
-          <h3 class="this__info__section__title">Appearance</h3>
-          <dl>
-            <dt>Height</dt>
-            <dd>5 Feet 7 Inches</dd>
-            <dt>Height</dt>
-            <dd>5 Feet 7 Inches</dd>
-            <dt>Height</dt>
-            <dd>5 Feet 7 Inches</dd>
-            <dt>Height</dt>
-            <dd>5 Feet 7 Inches</dd>
-            <dt>Height</dt>
-            <dd>5 Feet 7 Inches</dd>
-            <dt>Height</dt>
-            <dd>5 Feet 7 Inches</dd>
-            <dt>Height</dt>
-            <dd>5 Feet 7 Inches</dd>
-            <dt>Height</dt>
-            <dd>5 Feet 7 Inches</dd>
-            <dt>Height</dt>
-            <dd>5 Feet 7 Inches</dd>
-          </dl>
-        </div>
-      </div>
-      <div class="this__info__rt">
-        <div class="this__info__section">
-          <h3 class="this__info__section__title">Personal</h3>
-          <dl>
-            <dt>Height</dt>
-            <dd>5 Feet 7 Inches</dd>
-            <dt>Height</dt>
-            <dd>5 Feet 7 Inches</dd>
-            <dt>Height</dt>
-            <dd>5 Feet 7 Inches</dd>
-            <dt>Height</dt>
-            <dd>5 Feet 7 Inches</dd>
-            <dt>Height</dt>
-            <dd>5 Feet 7 Inches</dd>
-            <dt>Height</dt>
-            <dd>5 Feet 7 Inches</dd>
-            <dt>Height</dt>
-            <dd>5 Feet 7 Inches</dd>
-            <dt>Height</dt>
-            <dd>5 Feet 7 Inches</dd>
-            <dt>Height</dt>
-            <dd>5 Feet 7 Inches</dd>
-            <dt>Height</dt>
-            <dd>5 Feet 7 Inches</dd>
-            <dt>Height</dt>
-            <dd>5 Feet 7 Inches</dd>
-            <dt>Height</dt>
-            <dd>5 Feet 7 Inches</dd>
-          </dl>
-        </div>
-      </div>
-    </div>
-
-    <a class="close-reveal-modal"></a>
-  </div>
+  <!--include "templates/modals"-->
 
 
 

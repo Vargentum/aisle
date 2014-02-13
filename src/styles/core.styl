@@ -1101,38 +1101,44 @@ select
     border-bottom: none
     padding: 20px 20px 20px 80px
 
-  .this__options--creditCard
-    img('credit-card-types-about.png','100% 0')
+  .this__payment{
+    min-height: 115px
+  }
+
+  .this__payment__title
+    margin: -7px 0 12px
+    font-weight 700
+
+  .this__payment__main
+    min-height 250px
+
+
+  .this__payment--card
+    img('payment-card.png','100% 0')
 
     label
       width: 320px
       margin: 10px 0
 
-  .this__options--creditCard__types
+  .this__payment__type--credit
     position relative
     //image
     &:before
       pb(left 100% bottom 5px)
-      img('credit-card-types.png')
+      background-image data('payment-credit-supported.png')
       size 137px 25px
       margin-left: 5px
 
-  .this__options--creditCard__cvv
-    width: auto !important
-    input
-      width: 70px
+  .this__payment__type--debit
+    position relative
+    //image
+    &:before
+      pb(left 100% bottom 5px)
+      background-image data('payment-debit-supported.png')
+      size 138px 27px
+      margin-left: 5px
 
-  .this__options--creditCard__cvv__description
-    margin-left: 12px
-    padding-left: 55px
-    line-height 35px
-    img('credit-card-cvv.png','0 50%')
-
-  .this__options--creditCard__agreement
-    width: auto !important
-    hLine(middle)
-
-  .this__options--creditCard__expiryDate
+  .this__payment--card__expiryDate
     width: 320px
     jLine top
     select,
@@ -1142,6 +1148,46 @@ select
     .customSelect dl
       width: 153px !important
 
+  .this__payment--card__cvv
+    width: auto !important
+    input
+      width: 70px
+
+  .this__payment--card__cvv__description
+    margin-left: 12px
+    padding-left: 55px
+    line-height 35px
+    img('payment-card-cvv.png','0 50%')
+
+  .this__payment--card__agreement
+    width: auto !important
+    hLine(middle)
+
+
+  .this__payment--bank__list
+    hLine()
+    margin: 5px 0 5px -10px
+
+  .this__payment--bank__item
+    margin: 5px 0 5px 10px
+    size 155px 60px
+    border #b5b7b7
+    border-radius: 2px;
+    text-align: center
+    vAlign(middle)
+    input[type=radio]
+      margin: 0 5px 0 0
+
+
+
+
+.button-paypal-payment
+  font: 0/0 serif;
+  display block
+  margin: 10px 0
+  background-image data('payment-paypal-button.png')
+  size 256px 47px
+  cursor: pointer
 
 /*------------------------------------*\
   Template: Edit profile
@@ -2086,6 +2132,7 @@ select
 
 
 .user-profile-modal
+  @extend .modal--980
 
   .this__header__left
     width: 670px
