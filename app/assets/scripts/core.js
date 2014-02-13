@@ -39,7 +39,7 @@
   });
 
   $(function() {
-    var $main;
+    var $main, moveSlider;
     $main = $('.main-page-view').find('.this__main');
     $main.onepage_scroll({
       sectionContainer: ".this__main__section",
@@ -47,11 +47,14 @@
       animationTime: 1000,
       pagination: true,
       updateURL: false,
-      loop: false,
+      loop: true,
       keyboard: true,
       responsiveFallback: false
     });
-    console.log($(window).height());
+    moveSlider = function() {
+      return $main.moveDown();
+    };
+    setInterval(moveSlider, 1113000);
     return $('.onepage-pagination').appendTo('.this__column--rt');
   });
 

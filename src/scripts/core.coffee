@@ -37,7 +37,7 @@ $ ->
     animationTime: 1000,
     pagination: true,
     updateURL: false,
-    loop: false,
+    loop: true,
     keyboard: true,
 #  height value
     responsiveFallback: false
@@ -45,7 +45,10 @@ $ ->
   #  aftermove: ->(index)
   )
 
-  console.log($(window).height())
+  moveSlider = ->
+    $main.moveDown()
+  setInterval(moveSlider, 1113000)
+
 
   #  fix navigation positioning
   $('.onepage-pagination').appendTo('.this__column--rt')
