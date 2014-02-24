@@ -54,7 +54,7 @@
     moveSlider = function() {
       return $main.moveDown();
     };
-    setInterval(moveSlider, 1113000);
+    setInterval(moveSlider, 3000);
     return $('.onepage-pagination').appendTo('.this__column--rt');
   });
 
