@@ -1495,13 +1495,23 @@ select
   .this__header
     min-width: (960px / 2)
     min-height: 550px
-    size 50% 100%
+    height: 100%
     position relative
     background-color #3c7cc6
     z-index: 1
     color: #fff
 
     .flexbox &
+      width: 50%
+
+    .no-flexbox &
+      width: 49%
+      vAlign(middle)
+
+  .this__header__inner
+    width: 100%
+    .flexbox &
+      height 100%
       display: flex
       flex-direction column
       justify-content: space-around
@@ -1523,7 +1533,7 @@ select
 
   .this__name
     img('logo-main.png')
-    size 158px 65px
+    size: 100% 65px
     text-align: center;
     font: 0/0 serif;
     .no-flexbox &
@@ -1640,17 +1650,19 @@ select
       display inline-block
       max-width 100%
       max-height: 100%
+      transform scale(1.2)
 
 
   .this__device--1
     margin-right: 0
     text-align: right
+    img
+      transform none
 
   .this__feature
-    transform scale(.8)
     margin: 30px auto
     width: 440px
-    font-size: 18px
+    font-size: 16px
     position relative
     padding-left: 110px
     &:before
@@ -1667,7 +1679,7 @@ select
 
 
   .this__feature__title
-    font-size: 20px
+    font-size: 18px
     font-weight 700
     color: $primary-color;
     margin-bottom: 5px
@@ -1675,10 +1687,11 @@ select
 
   .this__media__wrapper
     jLine-old(top)
-    padding: 0 30px
+    padding: 0 15%
+    height: 50%
 
   .this__media
-    width: 47%
+    width: 35%
     margin-bottom: 60px
 
 
@@ -1697,11 +1710,10 @@ select
     width calc(100% \- 70px)
 
   .this__login
-    absolute right 20px top 8vh
-    width: 100%
-    z-index: 100;
+    absolute top 4.5vh right 12vw
+    padding-bottom: 10px
+    display block
     text-align: right;
-    padding: 10px 0
     font-weight 700
 
   .this__login__label
@@ -1753,9 +1765,7 @@ select
 
 
   .this__copyright
-    display block
-    text-align: center;
-    z-index: 100;
+    margin: 0 10px
     color #fff
     font-size 12px
     padding: 5px
