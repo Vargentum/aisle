@@ -557,13 +557,13 @@ select,select:hover{background-color:transparent;border:none;padding:0 20px 0 5p
 .no-flexbox .main-page-view{white-space:nowrap;}
 .no-flexbox .main-page-view>*{display:inline-block;vertical-align:top}
 .no-flexbox .main-page-view>*{white-space:normal}
-.main-page-view .this__header{min-width:480px;min-height:550px;height:100%;position:relative;background-color:#3c7cc6;z-index:1;color:#fff;}
+.main-page-view .this__header{min-width:480px;min-height:550px;height:100%;position:relative;background-color:#3c7cc6;z-index:1;color:#fff;background:url("../img/main-photo.jpg") 73% 0;}
 .flexbox .main-page-view .this__header{width:50%}
 .no-flexbox .main-page-view .this__header{width:49%;white-space:nowrap;}
 .no-flexbox .main-page-view .this__header>*{display:inline-block;vertical-align:middle}
 .no-flexbox .main-page-view .this__header:before{content:'';display:inline-block;vertical-align:middle;width:0;height:100%}
 .no-flexbox .main-page-view .this__header>*{white-space:normal}
-.main-page-view .this__header__inner{width:100%;}
+.main-page-view .this__header__inner{width:100%;position:relative;z-index:1;}
 .flexbox .main-page-view .this__header__inner{height:100%;display:-webkit-box;display:-moz-box;display:-webkit-flex;display:-ms-flexbox;display:box;display:flex;-webkit-box-orient:vertical;-moz-box-orient:vertical;-o-box-orient:vertical;-webkit-flex-direction:column;-ms-flex-direction:column;flex-direction:column;-webkit-box-pack:distribute;-moz-box-pack:distribute;-o-box-pack:distribute;-ms-flex-pack:distribute;-webkit-justify-content:space-around;justify-content:space-around;-webkit-box-align:center;-moz-box-align:center;-o-box-align:center;-ms-flex-align:center;-webkit-align-items:center;align-items:center}
 .no-flexbox .main-page-view .this__header__inner>*{margin:5vh 0}
 .main-page-view .this__column--rt{position:relative;width:50%;height:100%;min-width:480px}
@@ -630,12 +630,6 @@ select,select:hover{background-color:transparent;border:none;padding:0 20px 0 5p
 .main-page-view .this__login__label:after{content:'';display:inline-block;vertical-align:middle;width:15px;height:8px;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA8AAAAICAQAAACM2m15AAAAcElEQVQI12MIXRvqxoAVhIqEJjCEmoQ+Cw3EIikVei20HcTQCX0SGosmqRh6L7QaxlENvR+agSSpEfo4NBdZtVzo9dAyKNsQaF0Cul3ioRdCW4C0VejL0BBsLhUKPRm6OvR1qBcDDq/whx4MdUAWAQCweyGWlZHYkgAAAABJRU5ErkJggg==");background-repeat:no-repeat;background-position:50% 50%;margin-left:3px}
 .main-page-view .this__login__dropdown{text-align:left;border-color:#999;color:#656565;font-size:11px;display:none;position:absolute;top:100%;right:-10px;margin-top:-5px;}
 .main-page-view .this__login__dropdown.is-active{display:block}
-.main-page-view .this__login__social--facebook{display:block;padding:3px 0 3px 3px;margin-bottom:10px;font-size:14px;width:185px;border-width:1px;border-style:solid;-webkit-border-radius:2px;border-radius:2px;-webkit-background-clip:padding;-moz-background-clip:padding;background-clip:padding-box;background-color:#fff;position:relative;color:#3b5997;border-color:#3b5998;}
-.main-page-view .this__login__social--facebook:active{top:2px}
-.main-page-view .this__login__social--facebook:before{content:'';display:inline-block;vertical-align:middle;margin-right:5px;width:24px;height:24px;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAhklEQVRIx2OwjpzhCcTPgPg/lTHITE8GGhkOt4SBhoaD8eCzwDZ65v95a8/8f/ry4/+///79hwGqWbBg3dn/2ADVLHj26hNtLfj7FxEs2U0bqR8HxLiaLAvwAVCE09SCo+ce0taCZZsvDIE4GLVg1IIhZMGgrNFoWek/B1ngBWLQwPAnILMB7oRa95vhRnQAAAAASUVORK5CYII=");background-repeat:no-repeat;background-position:50% 50%}
-.main-page-view .this__login__social--linkedin{display:block;padding:3px 0 3px 3px;margin-bottom:10px;font-size:14px;width:185px;border-width:1px;border-style:solid;-webkit-border-radius:2px;border-radius:2px;-webkit-background-clip:padding;-moz-background-clip:padding;background-clip:padding-box;background-color:#fff;position:relative;color:#007bb5;border-color:#007bb5}
-.main-page-view .this__login__social--linkedin:active{top:2px}
-.main-page-view .this__login__social--linkedin:before{content:'';display:inline-block;vertical-align:middle;margin-right:5px;width:24px;height:24px;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABE0lEQVRIx2NgqN7mCcTPgPg/lfEzsNk0MhxhCQ0Nh+DhZ0HK+sv/33//9f/Jx+//vRaepr4Fn378/g8D5599pL4Fyy8+g1vQc/ge9S1grNn232HOif+WM4+B2fg0s9RuJ6gGw4KKnTf+n3n6AYwT1l4Ei004dh8u5rv4zP+8LVf/X3n5GezLP3///T/68N1/T1zxhS4w7eRDeBCBLAOJbbnxCi6GHEfI4N+////DVpyn3AIQOP7o/f+kdZf+Z2y88v/B+29w8WuvPlNuwcXnn/6z1e2Aq7cHxhcM/Przj3ILSndcR1Ev2LIbxXcUW5C49hKGIVS1IGrVhVELaGzBaIWDzQJaVvrPQRZ4gRnUN/wJyGwA4Geso4DmmXcAAAAASUVORK5CYII=");background-repeat:no-repeat;background-position:50% 50%}
 .main-page-view .this__copyright{margin:0 10px;color:#fff;font-size:12px;padding:5px}
 .main-page-body{margin:0;-webkit-transition:opacity 400ms;-moz-transition:opacity 400ms;-o-transition:opacity 400ms;-ms-transition:opacity 400ms;transition:opacity 400ms;overflow-y:hidden}
 .main-page-body,.onepage-wrapper{padding:0;display:block;position:static;width:100%;height:100%}
@@ -741,6 +735,16 @@ select{display:none}
 .input-range-slider:before{content:'';display:block;position:absolute;top:100%;left:0;width:100%;height:3px;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC8AAAADCAYAAAADSVbhAAAAGElEQVQoz2NIS0v7zzAEAdjdo44fIMcDAI09DSfdrFZVAAAAAElFTkSuQmCC");background-repeat:repeat-x;background-position:0 0}
 .input-range-progress{background-color:#2f80e4;height:2px;position:relative;top:-1px}
 .input-range-handle{display:block;position:absolute;top:-4px;width:8px;height:8px;background-color:#2f80e4;-webkit-border-radius:50%;border-radius:50%}
+.social-button--facebook{display:inline-block;padding:3px 7px 3px 3px;margin-bottom:10px;font-size:14px;font-weight:normal;min-width:185px;border-width:1px;border-style:solid;-webkit-border-radius:2px;border-radius:2px;background-color:#fff;position:relative;-webkit-transition:background-color 0.5s;-moz-transition:background-color 0.5s;-o-transition:background-color 0.5s;-ms-transition:background-color 0.5s;transition:background-color 0.5s;border-color:#3b5998;}
+.social-button--facebook:active{top:2px}
+.social-button--facebook:before{content:'';display:inline-block;vertical-align:middle;margin-right:8px;width:24px;height:24px;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAhklEQVRIx2OwjpzhCcTPgPg/lTHITE8GGhkOt4SBhoaD8eCzwDZ65v95a8/8f/ry4/+///79hwGqWbBg3dn/2ADVLHj26hNtLfj7FxEs2U0bqR8HxLiaLAvwAVCE09SCo+ce0taCZZsvDIE4GLVg1IIhZMGgrNFoWek/B1ngBWLQwPAnILMB7oRa95vhRnQAAAAASUVORK5CYII=");background-repeat:no-repeat;background-position:50% 50%}
+.social-button--facebook,.social-button--facebook:hover,.social-button--facebook:focus,.social-button--facebook:active,.social-button--facebook:visited{color:#3b5997}
+.social-button--facebook:hover,.social-button--facebook:focus{background-color:#e7eeff}
+.social-button--linkedin{display:inline-block;padding:3px 7px 3px 3px;margin-bottom:10px;font-size:14px;font-weight:normal;min-width:185px;border-width:1px;border-style:solid;-webkit-border-radius:2px;border-radius:2px;background-color:#fff;position:relative;-webkit-transition:background-color 0.5s;-moz-transition:background-color 0.5s;-o-transition:background-color 0.5s;-ms-transition:background-color 0.5s;transition:background-color 0.5s;border-color:#007bb5;}
+.social-button--linkedin:active{top:2px}
+.social-button--linkedin:before{content:'';display:inline-block;vertical-align:middle;margin-right:8px;width:24px;height:24px;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAABE0lEQVRIx2NgqN7mCcTPgPg/lfEzsNk0MhxhCQ0Nh+DhZ0HK+sv/33//9f/Jx+//vRaepr4Fn378/g8D5599pL4Fyy8+g1vQc/ge9S1grNn232HOif+WM4+B2fg0s9RuJ6gGw4KKnTf+n3n6AYwT1l4Ei004dh8u5rv4zP+8LVf/X3n5GezLP3///T/68N1/T1zxhS4w7eRDeBCBLAOJbbnxCi6GHEfI4N+////DVpyn3AIQOP7o/f+kdZf+Z2y88v/B+29w8WuvPlNuwcXnn/6z1e2Aq7cHxhcM/Przj3ILSndcR1Ev2LIbxXcUW5C49hKGIVS1IGrVhVELaGzBaIWDzQJaVvrPQRZ4gRnUN/wJyGwA4Geso4DmmXcAAAAASUVORK5CYII=");background-repeat:no-repeat;background-position:50% 50%}
+.social-button--linkedin,.social-button--linkedin:hover,.social-button--linkedin:focus,.social-button--linkedin:active,.social-button--linkedin:visited{color:#007bb5}
+.social-button--linkedin:hover,.social-button--linkedin:focus{background-color:#eef9ff}
 @media only screen and (max-width: 980px){body{padding-top:0}
 .l-header{position:static;margin-left:0}
 }@-moz-document url-prefix(){.events .person-view{white-space:nowrap}

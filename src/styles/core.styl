@@ -1500,6 +1500,7 @@ select
     background-color #3c7cc6
     z-index: 1
     color: #fff
+    background url('../img/main-photo.jpg') 73% 0
 
     .flexbox &
       width: 50%
@@ -1510,6 +1511,8 @@ select
 
   .this__header__inner
     width: 100%
+    position relative
+    z-index: 1;
     .flexbox &
       height 100%
       display: flex
@@ -1736,32 +1739,6 @@ select
     margin-top: -5px
     &.is-active
       display block
-
-
-  for $i in facebook linkedin
-    .this__login__social--{$i}
-      display block
-      padding: 3px 0 3px 3px
-      margin-bottom: 10px
-      font-size 14px
-      width 185px
-      border-width 1px
-      border-style: solid
-      border-radius 2px
-      background-clip padding-box
-      background-color #fff
-      pressable()
-      &:before
-        pi(middle)
-        margin-right: 5px
-        size 24px
-        img('login-social-'+$i+'.png')
-      if $i == facebook
-        color #3b5997
-        border-color: #3b5998;
-      if $i == linkedin
-        color #007bb5
-        border-color: #007bb5;
 
 
   .this__copyright
@@ -2269,6 +2246,41 @@ select
   background-color #2f80e4
   border-radius 50%
 
+
+/*	--------------------------------------------------
+	Social buttons
+	-------------------------------------------------- */
+for $i in facebook linkedin
+  .social-button--{$i}
+    display inline-block
+    padding: 3px 7px 3px 3px
+    margin-bottom: 10px
+    font-size 14px
+    font-weight normal
+    min-width 185px
+    border-width 1px
+    border-style: solid
+    border-radius 2px
+    background-color #fff
+    pressable()
+    transition background-color .5s
+    &:before
+      pi(middle)
+      margin-right: 8px
+      size 24px
+      img('login-social-'+$i+'.png')
+
+    if $i == facebook
+      c1 #3b5997
+      border-color: #3b5998;
+      &:hover,&:focus
+        background-color #e7eeff
+
+    if $i == linkedin
+      c1 #007bb5
+      border-color: #007bb5;
+      &:hover,&:focus
+        background-color #eef9ff
 
 /*	--------------------------------------------------
 	Crossbrowser fixes

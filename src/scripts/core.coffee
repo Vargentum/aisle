@@ -47,7 +47,7 @@ $ ->
 
   moveSlider = ->
     $main.moveDown()
-  setInterval(moveSlider, 3000)
+  setInterval(moveSlider, 8000)
 
 
   #  fix navigation positioning
